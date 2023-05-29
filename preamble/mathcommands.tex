@@ -1,0 +1,11 @@
+%%% Math Operator
+\DeclareMathOperator{\diag}{diag}
+
+%%% Arrows with sub and superscript
+\newcommand\myxrightarrow[2][]{
+    \xrightarrow[{\raisebox{1.25ex-\heightof{\(\scriptstyle#1\)}}[0pt]{\(\scriptstyle#1\)}}]{#2}%
+}
+
+\newcommand\myxrightharpoonup[2][]{
+    \xrightharpoonup[{\raisebox{1.25ex-\heightof{\(\scriptstyle#1\)}}[0pt]{\(\scriptstyle#1\)}}]{#2}%
+}

@@ -1,0 +1,32 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+\input{preamble/packages.tex}
+\input{preamble/setup.tex}
+\input{preamble/mathcommands.tex}
+
+\addbibresource{literature/literature.bib}
+
+\title{Script for the lecture \enquote{An introduction to the Regularity Theory of Elliptic Partial Differential Equations} held by Prof.\ Marco Cicalese in SoSe23}
+\author{Author}
+
+\begin{document}
+
+\frontmatter%
+% \input{pages/titlepage.tex}
+% \tableofcontents
+
+
+\mainmatter%
+\input{chapters/chapter01-1.tex}
+\input{chapters/chapter01-2.tex}
+
+\newpage
+\appendix
+% \input{appendix/appendix_A.tex}
+
+
+\backmatter%
+\AtNextBibliography{\small}
+% \printbibliography
+
+\end{document}
