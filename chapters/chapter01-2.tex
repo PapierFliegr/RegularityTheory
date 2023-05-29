@@ -63,5 +63,48 @@ We recall that higher order Sobolev spaces \(W^{k,p}(\Omega; \mathbb{R})\) with 
 \end{gather}
 Another way to prove continuity, applicable if \(p < n\), is to use \(W^{k,p}\) for \(k\) large enough. In fact, it holds true that:
 \begin{enumerate}[label= (\arabic*)]
-    \item if \(kp<n\) 
+    \item if \(kp<n\) then \(W^{k,p}(\Omega; \mathbb{R})\hookrightarrow L^{p}(\Omega;\mathbb{R})\) for all \(1 \leq q \leq p_{k}^{\star}\), when \(p_{k}^{\star}=\frac{np}{n-kp}\)
+    \item if \(kp=n\) then \(W^{k,p}(\Omega; \mathbb{R}) \hookrightarrow L^{q}(\Omega; \mathbb{R}) \) for all \( 1 \leq q\leq \infty \) 
+    \item if \( kp > n \) and \( k-\frac{n}{p}\notin \mathbb{N}, W^{k,p}(\Omega;\mathbb{R}) \hookrightarrow C^{l,\alpha}(\overline{\Omega; \mathbb{R}})\) for \( l= \left\lfloor k-\frac{n}{p} \right\rfloor  \) and \( 0 \leq \alpha\leq k-\frac{n}{p}-l \) 
+    \item if \( kp> n \) and \( k-\frac{n}{p}=l+1 \in \mathbb{N}, W^{k,p}(\Omega; \mathbb{R}) \hookrightarrow C^{l,\alpha} (\overline{\Omega}; \mathbb{R})\) for all \( 0 \leq \alpha < 1 \)  
 \end{enumerate}
+
+\section{A priori estimates and the Nirenberg method}
+
+If \( u \in  H_{loc}^{1} (\Omega; \mathbb{R})  \) (for the moment we are not interested at the bahavior ot \( u \) at \( \partial \Omega \) ) is a weak solution of a system of elliptic PDEs we cannot apply previous remark to prove classical regularity, i.e. differentiability of \( u \) without assuming existence and some integrability of higher order weak derviatives of \( u \). In fact the previous remark is not really exploiting the equation.\\
+\par
+\underline{How to gain better integrability?}\\
+What   follows goes under the name of \underline{Nirenberg's method}.\\
+Let us consider the simplest setting and consider a solution \( u \in H_{loc}^{1} (\Omega)  \) of the Poisson equation
+\begin{gather}
+    - \Delta u = f, \qquad f \in L_{loc}^{2} (\Omega ;\mathbb{R})   
+\end{gather}
+We want to prove that \( u \in H_{loc}^{2} (\Omega ; \mathbb{R}) =W_{loc}^{2,2} (\Omega ;\mathbb{R})  \), as this will be the first step to transfer regularity information from the data \( f \) to the solution \( u \).\\
+\\
+Let us start with supposing that we already knew that \( \partial_{x_{\alpha }} u \in H_{loc}^{1} (\Omega ;\mathbb{R})  \), then we know that
+\begin{gather}
+    -\Delta (\partial_{x_{\alpha }} u) = \partial_{x_{\alpha }} f \qquad \text{in a weak sense}
+\end{gather}
+To check it, test \( -\Delta u=f \) with \( \partial_{x_{\alpha }} \phi  \) and integrate by parts to get 
+\begin{align}
+    \int \nabla u \nabla (\partial_{x_{\alpha }}\phi )  \dd{x} &= \int f \partial_{x_{\alpha }}\phi  \dd{x}\\
+    \overset{=}{\int \nabla \partial_{x_{\alpha }}(\nabla \phi)  \dd{x}} & \overset{I.P.}{=} - \int \underbrace{\partial_{x_{\alpha }} \Delta u}_{\Delta (\partial_{x_{\alpha }} u) } \cdot \Delta \phi \dd{x} = - \int \Delta (\partial_{x_{\alpha }}u) \Delta \phi  \dd{x}
+\end{align} 
+Weak derivatives commute:
+\begin{gather}
+    \int \partial_{1}\partial_{2} u \phi  \dd{x} \overset{I.P.}{=} \int u \partial_{1} \partial_{2} \phi  \dd{x} \overset{\phi \text{ is regular}}{=} \int u \partial_{2}\partial_{1} \phi \dd{x} \overset{I.P.}{=} \int \partial_{2}\partial_{1}u \phi \dd{x}
+\end{gather}
+Hence \( \int \nabla (\partial_{x_{\alpha }}u) \nabla \phi  \dd{x} = -\int f \partial_{x_{\alpha }}\phi  \dd{x} \) or \( -\nabla (\partial_{x_{\alpha }}u) = \partial_{x_{\alpha}}f \).\\
+Hence for every ball \( B_{R} (x_{0}) \ssubset \Omega  \) (\( \overline{B_{R} (x_{0})} \subset \Omega  \)) we use the Caccioppoli-Leray inequality to get:
+\begin{gather}
+    C_{CL} \int\limits_{B_{\sfrac{R}{2}}(x_{0}}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
+\end{gather}
+that provides an explicit bound on the \( H_{loc}^{2} \) norm of \( u \) in terms of its \( H^{1} \) norm.\\
+\par
+In the previous discussion we have considered \( u \in H_{loc^{1}}(\Omega ; \mathbb{R})  \) to be a solution of the Poisson equation \( -\nabla u = f \) in \( \Omega  \) with \( f \in L^{2}(\Omega ) \). Assuming \( u\in H_{loc}^{2} \) we have obtained the following Caccioppoli-Leray estimate:
+\begin{gather}
+    C_{CL} \int\limits_{B_{\sfrac{R}{2}}(x_{0}}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
+\end{gather}
+Can we remove the \enquote{a priori} regularity assumption?\\
+Here, for the Poisson equation, it is simple.\\
+Consider the convolution \( u \ast f_{\epsilon } \).
