@@ -17,11 +17,11 @@ We can employ the condition~\eqref{E} to prove existence and uniqueness results 
 with data \(f_{i},F_{i}^{\alpha} \in L^{2}(\Omega;\mathbb{R})\).\\
 The weak formulation of the problem is readily obtained as
 \begin{gather}
-	\int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\beta}} u^{i} \partial_{x_{\alpha}} \phi^{i} \dd{x} = \int\limits_{\Omega}^{} \Big[f_{i} \phi^{i} + \sum_{\alpha,i}^{} F_{i}^{\alpha} \partial_{x_{\alpha}} \phi^{i} \Big] \dd{x} \qquad \forall \phi \in C_c^\infty(\Omega;\mathbb{R}^{m})
+	\int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\beta}} u^{i} \partial_{x_{\alpha}} \varphi^{i} \dd{x} = \int\limits_{\Omega}^{} \Big[f_{i} \varphi^{i} + \sum_{\alpha,i}^{} F_{i}^{\alpha} \partial_{x_{\alpha}} \varphi^{i} \Big] \dd{x} \qquad \forall \varphi \in C_c^\infty(\Omega;\mathbb{R}^{m})
 \end{gather}
 The matrix \(A_{ij}^{\alpha \beta}\) defines a bilinear continuous form on \(H_0^1(\Omega;\mathbb{R}^{m})\) by means of the formula
 \begin{gather}
-	{(\phi,\psi)}_A := \int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} \phi^{i} \partial_{x_{\beta}} \psi^{j} \dd{x}
+	{(\varphi,\psi)}_A := \int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} \varphi^{i} \partial_{x_{\beta}} \psi^{j} \dd{x}
 \end{gather}
 If moreover \(A_{ij}^{\alpha \beta}\) satisfies the Legendre condition~\eqref{E}, then the bilinear form is coercive, and we can use the Lax-Milgram theorem to prove existence and uniqueness of weak solutions. Actually one can prove existence and uniqueness under a weaker assumption known as \enquote{Legendre-Hademard}~\eqref{LH} condition:
 \begin{gather}
@@ -33,14 +33,14 @@ The~\eqref{LH} condition is strictly weaker than~\eqref{E}, as the following exa
 \begin{exm}[\eqref{LH} is weaker than~\eqref{E}]
 	Let \(m=n=2\) and let \(A_{ij}^{\alpha \beta}\) be such that
 	\begin{gather}
-		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} = \det{\xi} + \epsilon \abs{\xi}^{2}
+		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} = \det{\xi} + \varepsilon \abs{\xi}^{2}
 	\end{gather}
-	for some \(\epsilon \geq 0\) to be chosen later.\\
-	Since any rank-one matrix \(\xi = a \otimes b\) has \(\det{\xi}=0\), the~\eqref{LH} condition is fulfilled with \(\lambda = \epsilon \). On the other hand for \(\overline{\xi} = \diag(t,-t), t \neq 0\), we get
+	for some \(\varepsilon \geq 0\) to be chosen later.\\
+	Since any rank-one matrix \(\xi = a \otimes b\) has \(\det{\xi}=0\), the~\eqref{LH} condition is fulfilled with \(\lambda = \varepsilon \). On the other hand for \(\overline{\xi} = \diag(t,-t), t \neq 0\), we get
 	\begin{gather}
-		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \overline{\xi}_{\alpha}^{i} \overline{\xi}_{\beta}^{j} = \det{\overline{\xi}} + \epsilon \abs{\overline{\xi}}^{2} = -t^{2}+2 \epsilon t^{2} = t^{2}(2 \epsilon -1)
+		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \overline{\xi}_{\alpha}^{i} \overline{\xi}_{\beta}^{j} = \det{\overline{\xi}} + \varepsilon \abs{\overline{\xi}}^{2} = -t^{2}+2 \varepsilon t^{2} = t^{2}(2 \varepsilon -1)
 	\end{gather}
-	and the Legendre condition~\eqref{E} fails for \(2 \epsilon-1 <0\).
+	and the Legendre condition~\eqref{E} fails for \(2 \varepsilon-1 <0\).
 \end{exm}
 Nevertheless, the following \underline{Theorem} by G\r{a}rding holds true:
 \begin{thm}
@@ -83,20 +83,20 @@ We set
 	\end{itemize}
 \end{remark}
 \begin{proof}
-	W.l.o.g we take \(x_{0}=0\) and \(k=0\). We choose as test function \(\phi \) in the weak formulation
+	W.l.o.g we take \(x_{0}=0\) and \(k=0\). We choose as test function \(\varphi \) in the weak formulation
 	\begin{gather}
-		\int\limits_{B_{R}}^{} \left\langle  A \nabla u, \nabla \phi \right\rangle \dd{x} - \int\limits_{B_{R}}^{} \left\langle  f,\phi \right\rangle \dd{x} -\int\limits_{B_{R}}^{} \left\langle  F,\nabla\phi \right\rangle \dd{x} =0
+		\int\limits_{B_{R}}^{} \left\langle  A \nabla u, \nabla \varphi \right\rangle \dd{x} - \int\limits_{B_{R}}^{} \left\langle  f,\varphi \right\rangle \dd{x} -\int\limits_{B_{R}}^{} \left\langle  F,\nabla\varphi \right\rangle \dd{x} =0
 	\end{gather}
-	the function \(\phi:= u \eta^{2}\), where \(\eta \in C_{c}^{\infty}(B_{R}; \mathbb{R})\) is a cut-off function with \(\eta \equiv 1\) in \(B_{\sfrac{R}{2}}\), \(0 \leq \eta \leq 1\) and \(\norm{\nabla \eta}_{\infty} \leq \frac{4}{R}\)
+	the function \(\varphi:= u \eta^{2}\), where \(\eta \in C_{c}^{\infty}(B_{R}; \mathbb{R})\) is a cut-off function with \(\eta \equiv 1\) in \(B_{\sfrac{R}{2}}\), \(0 \leq \eta \leq 1\) and \(\norm{\nabla \eta}_{\infty} \leq \frac{4}{R}\)
 	\begin{center}
 		\includegraphics[scale=0.45]{pictures/picture01.png}
 	\end{center}
 	\begin{gather}
-		\pdv[]{\phi_{i}}{x_{\alpha}} = \pdv[]{}{x_{\alpha}} (\eta^{2}u^{2}) = \eta^{2}\pdv[]{u^{i}}{x_{\alpha}}+2 \eta \pdv[]{\eta}{x_{\alpha}} u^{i},
+		\pdv[]{\varphi_{i}}{x_{\alpha}} = \pdv[]{}{x_{\alpha}} (\eta^{2}u^{2}) = \eta^{2}\pdv[]{u^{i}}{x_{\alpha}}+2 \eta \pdv[]{\eta}{x_{\alpha}} u^{i},
 	\end{gather}
 	that is
 	\begin{gather}
-		\nabla \phi = \eta^{2} \nabla u + 2 \eta u \otimes \nabla \eta.
+		\nabla \varphi = \eta^{2} \nabla u + 2 \eta u \otimes \nabla \eta.
 	\end{gather}
 	Plugging in the last equality in the weak formulation
 	\begin{align}
@@ -110,7 +110,7 @@ We set
 		I_{2}:= & \, 2 \int\limits_{B_{R}}^{} \eta \left\langle A \nabla u , u \otimes \nabla \eta \right\rangle \dd{x} = 2 \int\limits_{B_{R}}^{} \eta \sum_{\alpha,\beta, i, j} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} u^{i} u^{j} \partial_{x_{\beta}} \eta \dd{x}  \\
 		        & \overset{\text{Cauchy-Schwarz}}{\leq} 2 \int\limits_{B_{R}}^{} \eta \abs{A} \abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x}  \\
 		        & \overset{\text{boundedness of \(\abs{A}\) and \(\norm{\nabla \eta}_{\infty}\)}}{\leq}   \frac{( \Lambda)}{R} \int\limits_{B_{R}}^{} (\eta \abs{\nabla u}) \abs{u} \dd{x}  \\
-		        & \overset{\text{Young \(ab \leq \frac{a^{2}}{2}+\frac{b^{2}}{2}\)}}{\leq} \frac{4 \Lambda}{R} \epsilon \int\limits_{B_{R}}^{} \eta^{2} \abs{\nabla u}^{2} \dd{x} + \frac{4 \Lambda}{R \epsilon} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x}  \\
+		        & \overset{\text{Young \(ab \leq \frac{a^{2}}{2}+\frac{b^{2}}{2}\)}}{\leq} \frac{4 \Lambda}{R} \varepsilon \int\limits_{B_{R}}^{} \eta^{2} \abs{\nabla u}^{2} \dd{x} + \frac{4 \Lambda}{R \varepsilon} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x}  \\
 		I_{3}:= & \int\limits_{B_{R}}^{} \left\langle f, \eta^{2} u \right\rangle \dd{x} = \int\limits_{B_{R}}^{} \eta^{2} \sum_{i}^{} f_{i}u^{i} \dd{x}
 		\overset{Young}{\leq} \frac{1}{2 R^{2}} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x} + \frac{R^{2}}{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}  \\
 		I_{4}:= & \int\limits_{B_{R}}^{} \eta^{2} \left\langle F, \nabla u \right\rangle \dd{x} = \int\limits_{B_{R}}^{} \eta^{2}\sum_{\alpha,i}^{} F_{i}^{\alpha} \partial_{x_{\alpha}} u^{i} \dd{x}
@@ -119,14 +119,14 @@ We set
 		I_{5}:= & \, 2 \int\limits_{B_{R}}^{} \eta \left\langle F, u \otimes \nabla \eta \right\rangle \dd{x} = 2 \int\limits_{B_{R}}^{} \sum_{\alpha,i} F_{i}^{\alpha} u^{i} \partial_{x_{\alpha}} \eta \dd{x}
 		\leq 4 \int\limits_{B_{R}}^{} \abs{F}^{2} \dd{x} + \frac{4}{R^{2}} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x}
 	\end{align}
-	Therefore from the weak formulation with \( \phi = \eta^{2} u\) we obtain
+	Therefore from the weak formulation with \( \varphi = \eta^{2} u\) we obtain
 	\begin{align}
 		\lambda \int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x}
 		 & \leq \int\limits_{B_{R}}^{} \eta^{2} \left\langle A \nabla u, \nabla u \right\rangle \dd{x}  \\
-		 & \leq  \underbrace{(\frac{4 \Lambda \epsilon}{R}+ \frac{\lambda}{4}) \int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x}}_{\text{Dirichlet term}} + (\frac{4 \Lambda}{R \epsilon}+\frac{1}{2 R^{2}}+\frac{4}{R^{2}}) \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x} +  \\
+		 & \leq  \underbrace{(\frac{4 \Lambda \varepsilon}{R}+ \frac{\lambda}{4}) \int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x}}_{\text{Dirichlet term}} + (\frac{4 \Lambda}{R \varepsilon}+\frac{1}{2 R^{2}}+\frac{4}{R^{2}}) \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x} +  \\
 		 & \qquad + \frac{R^{2}}{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x} + (\frac{1}{\lambda}+4) \int\limits_{B_{R}}^{} \abs{F}^{2} \dd{x}
 	\end{align}
-	We can choose \(\epsilon \) so small that \(\frac{4 \Lambda \epsilon}{R} = \frac{\lambda}{4}\) and absorb the Dirichlet term on the r.h.s.\ of the equation (meaning that it can be subtracted from both sides and still give a positive term on the left).\\
+	We can choose \(\varepsilon \) so small that \(\frac{4 \Lambda \varepsilon}{R} = \frac{\lambda}{4}\) and absorb the Dirichlet term on the r.h.s.\ of the equation (meaning that it can be subtracted from both sides and still give a positive term on the left).\\
 	Finally, one concludes the proof observing that
 	\begin{gather}
 		\int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x} \geq \int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla u}^{2} \dd{x}

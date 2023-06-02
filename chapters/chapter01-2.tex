@@ -85,16 +85,16 @@ Let us start with supposing that we already knew that \( \partial_{x_{\alpha }} 
 \begin{gather}
 	-\Delta (\partial_{x_{\alpha }} u) = \partial_{x_{\alpha }} f \qquad \text{in a weak sense}
 \end{gather}
-To check it, test \( -\Delta u=f \) with \( \partial_{x_{\alpha }} \phi  \) and integrate by parts to get
+To check it, test \( -\Delta u=f \) with \( \partial_{x_{\alpha }} \varphi  \) and integrate by parts to get
 \begin{align}
-	\int \nabla u \nabla (\partial_{x_{\alpha }}\phi )  \dd{x}           & = \int f \partial_{x_{\alpha }}\phi  \dd{x}  \\
-	\overset{=}{\int \nabla \partial_{x_{\alpha }}(\nabla \phi)  \dd{x}} & \overset{I.P.}{=} - \int \underbrace{\partial_{x_{\alpha }} \Delta u}_{\Delta (\partial_{x_{\alpha }} u) } \cdot \Delta \phi \dd{x} = - \int \Delta (\partial_{x_{\alpha }}u) \Delta \phi  \dd{x}
+	\int \nabla u \nabla (\partial_{x_{\alpha }}\varphi )  \dd{x}           & = \int f \partial_{x_{\alpha }}\varphi  \dd{x}  \\
+	\overset{=}{\int \nabla \partial_{x_{\alpha }}(\nabla \varphi)  \dd{x}} & \overset{I.P.}{=} - \int \underbrace{\partial_{x_{\alpha }} \Delta u}_{\Delta (\partial_{x_{\alpha }} u) } \cdot \Delta \varphi \dd{x} = - \int \Delta (\partial_{x_{\alpha }}u) \Delta \varphi  \dd{x}
 \end{align}
 Weak derivatives commute:
 \begin{gather}
-	\int \partial_{1}\partial_{2} u \phi  \dd{x} \overset{I.P.}{=} \int u \partial_{1} \partial_{2} \phi  \dd{x} \overset{\phi \text{ is regular}}{=} \int u \partial_{2}\partial_{1} \phi \dd{x} \overset{I.P.}{=} \int \partial_{2}\partial_{1}u \phi \dd{x}
+	\int \partial_{1}\partial_{2} u \varphi  \dd{x} \overset{I.P.}{=} \int u \partial_{1} \partial_{2} \varphi  \dd{x} \overset{\varphi \text{ is regular}}{=} \int u \partial_{2}\partial_{1} \varphi \dd{x} \overset{I.P.}{=} \int \partial_{2}\partial_{1}u \varphi \dd{x}
 \end{gather}
-Hence \( \int \nabla (\partial_{x_{\alpha }}u) \nabla \phi  \dd{x} = -\int f \partial_{x_{\alpha }}\phi  \dd{x} \) or \( -\nabla (\partial_{x_{\alpha }}u) = \partial_{x_{\alpha}}f \).\\
+Hence \( \int \nabla (\partial_{x_{\alpha }}u) \nabla \varphi  \dd{x} = -\int f \partial_{x_{\alpha }}\varphi  \dd{x} \) or \( -\nabla (\partial_{x_{\alpha }}u) = \partial_{x_{\alpha}}f \).\\
 Hence, for every ball \( B_{R} (x_{0}) \ssubset \Omega  \) (\( \overline{B_{R} (x_{0})} \subset \Omega  \)) we use the Caccioppoli-Leray inequality~\eqref{CLI}  to get:
 \begin{gather}
 	C_{CL} \int\limits_{B_{\sfrac{R}{2}}(x_{0})}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
@@ -107,19 +107,19 @@ In the previous discussion we have considered \( u \in H_{loc^{1}}(\Omega ; \mat
 \end{gather}
 Can we remove the \enquote{a priori} regularity assumption?\\
 Here, for the Poisson equation, it is simple.\\
-Consider the convolution \( u \ast \rho_{\epsilon } \). Since \( -\Delta  u = f \) we have \( -\Delta  (u \ast \rho_{\epsilon }) = f\ast \rho _{\epsilon }\).\\
+Consider the convolution \( u \ast \rho_{\varepsilon } \). Since \( -\Delta  u = f \) we have \( -\Delta  (u \ast \rho_{\varepsilon }) = f\ast \rho _{\varepsilon }\).\\
 Now observe that
 \begin{align}
-	C_{CL} \int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla (\partial_{x_{\alpha }}u\ast \rho _{\epsilon })}*2 \dd{x} & \leq \frac{1}{R^{2}}\int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u \ast \rho _{\epsilon }}^{2} \dd{x} + R^{2}\int\limits_{B_{R}}^{} \abs{f\ast \rho _{\epsilon }}^{2} \dd{x}  \\
-	                                                                                                               & \leq  \frac{1}{R^{2}} \int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u}^{2} \dd{x} + R^{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}
+	C_{CL} \int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla (\partial_{x_{\alpha }}u\ast \rho _{\varepsilon })}*2 \dd{x} & \leq \frac{1}{R^{2}}\int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u \ast \rho _{\varepsilon }}^{2} \dd{x} + R^{2}\int\limits_{B_{R}}^{} \abs{f\ast \rho _{\varepsilon }}^{2} \dd{x}  \\
+	                                                                                                                  & \leq  \frac{1}{R^{2}} \int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u}^{2} \dd{x} + R^{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}
 \end{align}
-As a result \( \forall \alpha ,\beta \, \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\epsilon })}_{L_{loc}^{2}} \leq  C \). This means that, up to subsequences \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\epsilon }) \myxrightharpoonup[\epsilon  \to 0]{L^{2}} g\). Since \( \partial_{x_{\alpha }}(u\ast \rho _{\epsilon }) \myxrightarrow[]{L^{2}} \partial_{x_{\alpha }} u \), we have that \( g = \partial_{x_{\alpha }}\partial_{x_{\beta}}u\) and that the whole sequence \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\epsilon }) \) converges to \( \partial_{x_{\alpha }}\partial_{x_{\beta}}u \). \\
+As a result \( \forall \alpha ,\beta \, \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon })}_{L_{loc}^{2}} \leq  C \). This means that, up to subsequences \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \myxrightharpoonup[\varepsilon  \to 0]{L^{2}} g\). Since \( \partial_{x_{\alpha }}(u\ast \rho _{\varepsilon }) \myxrightarrow[]{L^{2}} \partial_{x_{\alpha }} u \), we have that \( g = \partial_{x_{\alpha }}\partial_{x_{\beta}}u\) and that the whole sequence \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \) converges to \( \partial_{x_{\alpha }}\partial_{x_{\beta}}u \). \\
 As a result \( \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}u}_{L_{loc}^{2}} \leq  C \) and \( u \in H_{loc}^{2} (\Omega )  \).\\
 \par
 
 We have used the following result:
 \begin{lem}[Stability of weak derivatives]
-	\( u_{k}\in W^{1,p}(\Omega )\) for some \( 1 < p < \infty, \forall k \in  \mathbb{N} \). Assume \( u_{k} \myxrightarrow[]{} u  \) in \( L^{p} \) and \( \sup_{k}\norm{\nabla u_{k}}_{p}\leq C \), then \( u\in W^{1,p}(\Omega ) \) and \( \nabla u_{k \myxrightharpoonup[]{}\nabla u} \) in \( L^{p} \).
+	\( u_{k}\in W^{1,p}(\Omega )\) for some \( 1 < p < \infty, \forall k \in  \mathbb{N} \). Assume \( u_{k} \myxrightarrow[]{} u  \) in \( L^{p} \) and \( \sup_{k}\norm{\nabla u_{k}}_{p}\leq C \), then \( u\in W^{1,p}(\Omega ) \) and \( \nabla u_{k} \myxrightharpoonup[]{} \nabla u \) in \( L^{p} \).
 \end{lem}
 The same idea does not work so easily when the coefficients \( A_{ij}^{\alpha \beta } \) are not constant. In fact in this case differentiating the equation produces \enquote{extra terms}.\\
 Nirenberg's idea is to use difference quotients instead of derivatives. We introduce the notation
@@ -137,9 +137,9 @@ The following properties can be checked to hold true:
 
 	\item Integration by parts rule
 	      \begin{gather}
-		      \int\limits_{\Omega}^{} \phi (x) \Delta _{h, \alpha } u(x)   \dd{x} = -\int\limits_{\Omega}^{} u(x) \Delta _{-h, \alpha }\phi (x)    \dd{x}
+		      \int\limits_{\Omega}^{} \varphi (x) \Delta _{h, \alpha } u(x)   \dd{x} = -\int\limits_{\Omega}^{} u(x) \Delta _{-h, \alpha }\varphi (x)    \dd{x}
 	      \end{gather}
-	      for all \( \phi \in  C_{c}^{1} (\Omega ; \mathbb{R}), \abs{h}< \operatorname{dist}(\operatorname{spt} \phi, \partial \Omega )  \)
+	      for all \( \varphi \in  C_{c}^{1} (\Omega ; \mathbb{R}), \abs{h}< \operatorname{dist}(\operatorname{spt} \varphi, \partial \Omega )  \)
 \end{enumerate}
 The following lemma provides a characterization of \( W^{1,p} \) functions with \( p>1 \), in terms of uniform \( L^{p} \) bounds of the corresponding discrete partial derivatives.
 
@@ -147,7 +147,7 @@ The following lemma provides a characterization of \( W^{1,p} \) functions with 
 	Consider \( u\in L_{loc}^{p}(\Omega ;\mathbb{R}) \), with \( 1< p \leq  \infty  \) and fix \( \alpha \in \{ 1,2,\ldots,n \} \). The partial derivative \( \partial_{x_{\alpha }}u \) belongs to \( L_{loc}^{p}(\Omega ;\mathbb{R}) \) if and only if the family \( \Delta _{h,\alpha }u \) is uniformly bounded in \( L_{loc}^{p} \) as \( h \to 0 \).\\
 	More precisely, if \( \forall \Omega' \ssubset \Omega \, \exists C=C(\Omega') \) such that
 	\begin{gather}
-		\abs{\int\limits_{\Omega'}^{} (\Delta _{h,\alpha }u) \phi  \dd{x}}\leq c\norm{\phi }_{L^{p'}(\Omega';\mathbb{R})} \qquad \phi \in C_{c}^{1}(\Omega';\mathbb{R})
+		\abs{\int\limits_{\Omega'}^{} (\Delta _{h,\alpha }u) \varphi  \dd{x}}\leq c\norm{\varphi }_{L^{p'}(\Omega';\mathbb{R})} \qquad \varphi \in C_{c}^{1}(\Omega';\mathbb{R})
 	\end{gather}
 	with \( \frac{1}{p}+\frac{1}{p'}=1 \) and \( \abs{h}< \frac{1}{2} \operatorname{dist}(\Omega';\partial \Omega )  \).
 \end{lem}
@@ -188,30 +188,38 @@ We now state and prove the first interior regularity theorem.
 	\( \bullet \)  Assume w.l.o.g that \( x_{0}=0 \) and \( F=0 \). (note that the term \( \sum_{\alpha }^{}\partial_{x_{\alpha }}F_{i}^{\alpha } \) can always be absorbed into \( f \). In fact \( \norm{f+ \operatorname{div}F^{i}}_{2}\leq \norm{f}_{2}+\norm{\nabla F}_{2} \))\\
 	\( \bullet \)  Moreover we assume that \( \lambda \) is constant (it is possible to reduce to the general case, see next lectures) \\
 	We start observing that the equation in its weak formulation reads as
-	\[ \int\limits_{\Omega}^{} \left\langle A \nabla u, \nabla \phi  \right\rangle  \dd{x} = \int\limits_{\Omega}^{} \left\langle f,\phi  \right\rangle  \dd{x}, \qquad \forall  \phi \in  C_{c}^{\infty }(\Omega ; \mathbb{R}) \]
+	\[ \int\limits_{\Omega}^{} \left\langle A \nabla u, \nabla \varphi  \right\rangle  \dd{x} = \int\limits_{\Omega}^{} \left\langle f,\varphi  \right\rangle  \dd{x}, \qquad \forall  \varphi \in  C_{c}^{\infty }(\Omega ; \mathbb{R}) \]
 	In order to simplify the notation in the proof we let \( e_{\gamma } \) be a fixed vector and set \( \tau _{h}:= \tau _{h, \gamma  } \) and \( \Delta _{h := \Delta _{h, \gamma }} \).\\
-	We take as test function \( \tau _{-h}\phi  \), for \( h \) small enough and change variables to get
-	\[ \int\limits_{\Omega}^{} \left\langle \tau _{h}(A \nabla \phi  \right\rangle  \dd{x} = \int\limits_{\Omega}^{} \left\langle \tau _{h}f, \phi  \right\rangle  \dd{x} \]
+	We take as test function \( \tau _{-h}\varphi  \), for \( h \) small enough and change variables to get
+	\[ \int\limits_{\Omega}^{} \left\langle \tau _{h}(A \nabla u), \nabla \varphi  \right\rangle  \dd{x} = \int\limits_{\Omega}^{} \left\langle \tau _{h}f, \varphi  \right\rangle  \dd{x} \]
 	subtracting the two previous equations anf dividing by \( h \) we have that (using Leibniz)
 	\begin{align}
-		  & \int\limits_{\Omega}^{} \frac{1}{h} \left[ \left\langle A \nabla u, \nabla \phi  \right\rangle  \right]- \left\langle \tau _{h}(A \nabla u), \nabla \phi  \right\rangle \dd{x}  \\
-		= & \int\limits_{\Omega}^{} \left\langle \underbrace{A \nabla u - \tau _{h}(A \nabla u)}_{h}, \nabla \phi  \right\rangle  \dd{x}  \\
-		= & \int\limits_{\Omega}^{} \left\langle \Delta _{h}(A \nabla u), \nabla \phi  \right\rangle  \dd{x}  \\
-		= & \int\limits_{\Omega}^{} \left\langle \tau _{h} A \nabla (\Delta _{h} u), \nabla \phi \right\rangle  + \left\langle (\Delta _{h}A) \nabla u, \nabla \phi  \right\rangle \dd{x}  \\
-		= & \int\limits_{\Omega}^{} \left\langle \Delta _{h}f, \phi  \right\rangle  \dd{x},
+		  & \int\limits_{\Omega}^{} \frac{1}{h} \left[ \left\langle A \nabla u, \nabla \varphi  \right\rangle  \right]- \left\langle \tau _{h}(A \nabla u), \nabla \varphi  \right\rangle \dd{x}  \\
+		= & \int\limits_{\Omega}^{} \left\langle \underbrace{A \nabla u - \tau _{h}(A \nabla u)}_{h}, \nabla \varphi  \right\rangle  \dd{x}  \\
+		= & \int\limits_{\Omega}^{} \left\langle \Delta _{h}(A \nabla u), \nabla \varphi  \right\rangle  \dd{x}  \\
+		= & \int\limits_{\Omega}^{} \left\langle \tau _{h} A \nabla (\Delta _{h} u), \nabla \varphi \right\rangle  + \left\langle (\Delta _{h}A) \nabla u, \nabla \varphi  \right\rangle \dd{x}  \\
+		= & \int\limits_{\Omega}^{} \left\langle \Delta _{h}f, \varphi  \right\rangle  \dd{x},
 	\end{align}
 	i.e,
-	\[ \int\limits_{\Omega}^{} \left\langle (\tau _{h}A) \nabla (\Delta _{h}u)  \right\rangle  \dd{x} = \int\limits_{\Omega}^{} \left\langle \Delta _{h} f, \phi  \right\rangle  \dd{x} - \int\limits_{\Omega}^{} \left\langle (\Delta _{h}A) \nabla u, \nabla \phi \right\rangle  \dd{x} \]
+	\[ \int\limits_{\Omega}^{} \left\langle (\tau _{h}A) \nabla (\Delta _{h}u)  \right\rangle  \dd{x} = \int\limits_{\Omega}^{} \left\langle \Delta _{h} f, \varphi  \right\rangle  \dd{x} - \int\limits_{\Omega}^{} \left\langle (\Delta _{h}A) \nabla u, \nabla \varphi \right\rangle  \dd{x} \]
 	This is the weak formulation of the equation
-	\[ - \sum\limits_{\alpha ,\beta ,j}^{} \partial_{x_{\alpha}} \left( (\tau _{h}A)_{ij}^{\alpha \beta } \partial_{x_{\beta }} v^{j} \right)= f_{i}' - \sum\limits_{\alpha }^{} \partial_{x_{\alpha }} G_{i}^{\alpha }, \qquad i=1,2,\ldots,m \tag{EQ} \label{EQ} \]
-	where \( v= \Delta _{h}u \). \( f'=\Delta _{h}f \) and \( G=-(\Delta _{h}A) \nabla u \). The basic idea now is to use~\eqref{CLI}. A direct application of it would lead to an estimate in terms of the \( L^{2} \) norm of \( f'=\Delta _{h}f \) which we know can be uniformly bounded in \( h \) only if \( f \in H_{loc}^{1}(\Omega )  \) (by the characterization of Sobolev spaces in terms of difference quotients). Since we have only assumed \( f \in L_{loc}^{2}(\Omega) \), we need to proceed carefully and \enquote{adapt} the proof of~\eqref{CLI}. We consider the cut-off function \( \eta \) compactly supported in \( B_{R} \), \( \eta \in [0,1]  \), \( \eta \equiv 1 \) on \( B_{\sfrac{R}{2}} \) and \( \abs{\nabla \eta }\leq \sfrac{4}{R} \). We need test~\eqref{EQ} with \( \phi := \eta ^{2}\delta _{h}u= \eta ^{2}v \), where \( \abs{h}<\sfrac{R}{2} \). \\
+	\[ - \sum\limits_{\alpha ,\beta ,j}^{} \partial_{x_{\alpha}} \left( {(\tau _{h}A)}_{ij}^{\alpha \beta } \partial_{x_{\beta }} v^{j} \right)= f_{i}' - \sum\limits_{\alpha }^{} \partial_{x_{\alpha }} G_{i}^{\alpha }, \qquad i=1,2,\ldots,m \tag{EQ} \label{EQ} \]
+	where \( v= \Delta _{h}u \). \( f'=\Delta _{h}f \) and \( G=-(\Delta _{h}A) \nabla u \). The basic idea now is to use~\eqref{CLI}. A direct application of it would lead to an estimate in terms of the \( L^{2} \) norm of \( f'=\Delta _{h}f \) which we know can be uniformly bounded in \( h \) only if \( f \in H_{loc}^{1}(\Omega )  \) (by the characterization of Sobolev spaces in terms of difference quotients). Since we have only assumed \( f \in L_{loc}^{2}(\Omega) \), we need to proceed carefully and \enquote{adapt} the proof of~\eqref{CLI}. We consider the cut-off function \( \eta \) compactly supported in \( B_{R} \), \( \eta \in [0,1]  \), \( \eta \equiv 1 \) on \( B_{\sfrac{R}{2}} \) and \( \abs{\nabla \eta }\leq \sfrac{4}{R} \). We need test~\eqref{EQ} with \( \varphi := \eta ^{2}\delta _{h}u= \eta ^{2}v \), where \( \abs{h}<\sfrac{R}{2} \). \\
 	As in the proof of~\eqref{CLI} we get
-	\[ \frac{3 \lambda }{4}\int\limits_{B_{R}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x} \leq  \frac{4 \Lambda \epsilon }{R}\int\limits_{B_{R}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x}+ \left( \frac{4 \Lambda }{R \epsilon }+ \frac{4}{R^{2}}\right) \int\limits_{B_{R}}^{} \abs{v}^{2} \dd{x}	+ \int\limits_{B_{R}}^{} \eta ^{2}v \Delta _{h}f \dd{x} + \left( \frac{1}{\lambda } + 4	 \right) \int\limits_{B_{R}}^{} \abs{G}^{2} \dd{x}. \]
-	CHoosing \( \epsilon > 0 \) we absorb \( \frac{4 \Lambda \epsilon }{R} \int\limits_{B_{R}}^{} \eta ^{2} \abs{\nabla v}^{2} \dd{x} \) in the L.H.S\ and we get that for some constant \( c=c(\lambda , \Lambda , R) > 0 \)
-	\[ c \int\limits_{B_{R}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x} \leq \underbrace{\int\limits_{B_{R}}^{} \abs{v}^{2} \dd{x}}_{\eqref{1}} + \underbrace{\int\limits_{B_{R}}^{} \eta ^{2} v \Delta _{h}f \dd{x}}_{\eqref{2} } + \underbrace{\int\limits_{B_{R}}^{} \abs{G}^{2} \dd{x}}_{\eqref{3}}         \tag{0}\label{0} \]
+	\[ \frac{3 \lambda }{4}\int\limits_{B_{R}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x} \leq  \frac{4 \Lambda \varepsilon }{R}\int\limits_{B_{R}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x}+ \left( \frac{4 \Lambda }{R \varepsilon }+ \frac{4}{R^{2}}\right) \int\limits_{B_{R}}^{} \abs{v}^{2} \dd{x}	+ \int\limits_{B_{R}}^{} \eta ^{2}v \Delta _{h}f \dd{x} + \left( \frac{1}{\lambda } + 4	 \right) \int\limits_{B_{R}}^{} \abs{G}^{2} \dd{x}. \]
+	Choosing \( \varepsilon > 0 \) we absorb \( \frac{4 \Lambda \varepsilon }{R} \int_{B_{R}}^{} \eta ^{2} \abs{\nabla v}^{2} \dd{x} \) in the L.H.S\ and we get that for some constant \( c=c(\lambda , \Lambda , R) > 0 \)
+	\begin{gather}
+		c \int\limits_{B_{R}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x} \leq \underbrace{\int\limits_{B_{R}}^{} \abs{v}^{2} \dd{x}}_{\eqref{004}} + \underbrace{\int\limits_{B_{R}}^{} \eta ^{2} v \Delta _{h}f \dd{x}}_{\eqref{005} } + \underbrace{\int\limits_{B_{R}}^{} \abs{G}^{2} \dd{x}}_{\eqref{006}} \label{003}
+	\end{gather}
 	We consider the different terms separately. We notice that (see~\eqref{001} in the proof of Lemma~\ref{lemma01})
-	\[ \int\limits_{B_{R}}^{} \abs{v}^{2} \dd{x} = \int\limits_{B_{R}}^{} \abs{\Delta _{h} u}^{2} \dd{x} \leq \int\limits_{B_{R+h}}^{} \abs{\nabla u}^{2} \dd{x} \tag{1}\label{1} \]
-	The R.H.S\ of the inequality above can be estimated by the~\eqref{CLI}.
-\end{proof}
+	\begin{gather}
+		\int\limits_{B_{R}}^{} \abs{v}^{2} \dd{x} = \int\limits_{B_{R}}^{} \abs{\Delta _{h} u}^{2} \dd{x} \leq \int\limits_{B_{R+h}}^{} \abs{\nabla u}^{2} \dd{x} \label{004}
+	\end{gather}
+	The R.H.S\ of the inequality above can be estimated by the~\eqref{CLI}. In fact \( \int_{B_{R+h}}^{} \abs{\nabla u}^{2} \dd{x} \leq \int_{B_{\sfrac{3}{2}R}}^{} \abs{\nabla u}^{2} \dd{x} \) which can be in turn be estimated by~\eqref{CLI} for \( u \) between the balls \( B_{\sfrac{3R}{2}} \) and \( B_{2R} \), with an upper bound of the type we are looking for. Concerning the term~\eqref{2} we have
+	\begin{align}
+		\abs{\int\limits_{B_{R}}^{} \eta ^{2} v \Delta _{h} f \dd{x}} \overset{\text{discrete by I.P.}}{=} & \abs{\int\limits_{B_{R}}^{} - \Delta _{-h} (\eta ^{2} v) f  \dd{x}}  \notag  \\
+		\overset{\text{Young }p=q=2}{\leq}                                                                 & \widetilde{\varepsilon} \int\limits_{B_{R}}^{} \abs{\Delta _{-h}(\eta ^{2}v)}^{2} \dd{x} + \frac{1}{ \widetilde{\varepsilon}} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x} \label{004}
+	\end{align}
+	The term \( \int_{B_{R}}^{} \abs{f}^{2} \dd{x} \leq \int_{B_{2R}}^{} \abs{f}^{2} \dd{x} \) is already fine for the estimate we want. For the other term we have
 
-Write Cicalese Mail for Template
+\end{proof}
