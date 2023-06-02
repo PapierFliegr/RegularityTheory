@@ -13,5 +13,8 @@
         "Sobolev",
         "Widman",
         "Widman's"
-    ]
+    ],
+    "files.exclude": {
+        "*.synctex.gz": true
+    }
 }
