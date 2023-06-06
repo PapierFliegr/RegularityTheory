@@ -215,11 +215,37 @@ We now state and prove the first interior regularity theorem.
 	\begin{gather}
 		\int\limits_{B_{R}}^{} \abs{v}^{2} \dd{x} = \int\limits_{B_{R}}^{} \abs{\Delta _{h} u}^{2} \dd{x} \leq \int\limits_{B_{R+h}}^{} \abs{\nabla u}^{2} \dd{x} \label{004}
 	\end{gather}
-	The R.H.S\ of the inequality above can be estimated by the~\eqref{CLI}. In fact \( \int_{B_{R+h}}^{} \abs{\nabla u}^{2} \dd{x} \leq \int_{B_{\sfrac{3}{2}R}}^{} \abs{\nabla u}^{2} \dd{x} \) which can be in turn be estimated by~\eqref{CLI} for \( u \) between the balls \( B_{\sfrac{3R}{2}} \) and \( B_{2R} \), with an upper bound of the type we are looking for. Concerning the term~\eqref{2} we have
+	The R.H.S\ of the inequality above can be estimated by the~\eqref{CLI}. In fact \( \int_{B_{R+h}}^{} \abs{\nabla u}^{2} \dd{x} \leq \int_{B_{\sfrac{3}{2}R}}^{} \abs{\nabla u}^{2} \dd{x} \) which can be in turn be estimated by~\eqref{CLI} for \( u \) between the balls \( B_{\sfrac{3R}{2}} \) and \( B_{2R} \), with an upper bound of the type we are looking for. Concerning the term~\eqref{005} we have
 	\begin{align}
-		\abs{\int\limits_{B_{R}}^{} \eta ^{2} v \Delta _{h} f \dd{x}} \overset{\text{discrete by I.P.}}{=} & \abs{\int\limits_{B_{R}}^{} - \Delta _{-h} (\eta ^{2} v) f  \dd{x}}  \notag  \\
-		\overset{\text{Young }p=q=2}{\leq}                                                                 & \widetilde{\varepsilon} \int\limits_{B_{R}}^{} \abs{\Delta _{-h}(\eta ^{2}v)}^{2} \dd{x} + \frac{1}{ \widetilde{\varepsilon}} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x} \label{004}
+		\label{005} \abs{\int\limits_{B_{R}}^{} \eta ^{2} v \Delta _{h} f \dd{x}} \overset{\text{discrete by I.P.}}{=} & \abs{\int\limits_{B_{R}}^{} - \Delta _{-h} (\eta ^{2} v) f  \dd{x}}  \\
+		\overset{\text{Young }p=q=2}{\leq}                                                                             & \widetilde{\varepsilon} \int\limits_{B_{R}}^{} \abs{\Delta _{-h}(\eta ^{2}v)}^{2} \dd{x} + \frac{1}{ \widetilde{\varepsilon}} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x} \notag
 	\end{align}
 	The term \( \int_{B_{R}}^{} \abs{f}^{2} \dd{x} \leq \int_{B_{2R}}^{} \abs{f}^{2} \dd{x} \) is already fine for the estimate we want. For the other term we have
-
+	\begin{align}
+		\widetilde{\varepsilon }\int\limits_{B_{R}}^{} \abs{\Delta _{h}(\eta ^{2}v)}^{2} \dd{x} \overset{\text{Corollary of }~\ref{lemma01}}{\leq} & \widetilde{\varepsilon } \int\limits_{B_{h+r}}^{} \abs{\nabla (\eta ^{2}v) }^{2} \dd{x}  \\
+		=                                                                                                                                          & c \widetilde{\varepsilon }\int\limits_{B_{R+h}}^{} \abs{(\nabla \eta ^{2})v+\eta ^{2} \nabla v }^{2} \dd{x}  \\
+		\overset{\eqref{007}}{\leq}                                                                                                                & c \widetilde{\varepsilon} \left[ \frac{128}{R^{2}} \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2 \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]  \\
+		\leq                                                                                                                                       & c \widetilde{\varepsilon } 2 \left[ \int\limits_{B_{R+h}}^{} \abs{\nabla \eta ^{2}}^{2} \abs{v}^{2} \dd{x} + \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]  \\
+		\overset{\eqref{008}}{\leq}                                                                                                                & c \widetilde{\varepsilon} \left[ \frac{128}{R^{2}} \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2 \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]  \\
+		\overset{\eta ^{4}\leq \eta ^{2}}{\leq}                                                                                                    & c \widetilde{\varepsilon } \frac{128}{R^{2}} \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + c \widetilde{\varepsilon } 2 \int\limits_{B_{R+h}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x}
+	\end{align}
+	For~\eqref{007}, see that
+	\begin{gather}
+		{(a+b)}^{2}= 4{(\frac{1}{2}a+\frac{1}{2}b)} ^{2} \overset{\text{conv}}{\leq } 4 \frac( {1}{2}a^{2}+ \frac{1}{2}b) = 2(a^{2}+b^{2}) \label{007}
+	\end{gather}
+	and for~\eqref{008}, see that
+	\begin{gather}
+		\abs{\eta }\leq 1, \, \abs{\nabla \eta }\leq \frac{4}{R} \Rightarrow \abs{\nabla \eta ^{2}}^{2}=\abs{2 \eta \nabla \eta }^{2} < {(\frac{8}{R})} ^{2} = \frac{64}{R^{2}} \label{008}
+	\end{gather}
+	The term \( 2 c \widetilde{\varepsilon } \int_{B_{R+h}}^{} \eta ^{2} \abs{\nabla v}^{2} \dd{x} \) can be absorbed in the l.h.s.\ of~\eqref{003} on choosing \( \widetilde{\varepsilon } \) small enough, while the term \( \frac{128c}{R^{2}} \widetilde{\varepsilon } \int_{B_{R+h}}^{} \abs{v}^{2} \dd{x} \) can again be estimated as in~\eqref{004} using~\eqref{CLI}. \\
+	We are left with
+	\begin{gather}
+		\int\limits_{B_{R}}^{} \abs{G}^{2} \dd{x} = \int\limits_{B_{R}}^{} \abs{\Delta_{h}A \cdot \nabla u}^{2} \dd{x} \overset{\text{A is locally Lip}}{\leq } c \int\limits_{B_{R}}^{} \abs{\nabla u}^{2} \dd{x}, \label{006}
+	\end{gather}
+	hence we can use~\eqref{CLI} again. \\
+	We eventually collect all the estimates to find out that we control uniformly as \( h \to 0 \) the term
+	\begin{gather}
+		\int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla v}^{2} \dd{x}	= \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla \Delta _{h}u}^{2} \dd{x}	= \int\limits_{B_{\frac{R}{2}}}^{} \abs{\Delta _{h} \nabla u}^{2} \dd{x}
+	\end{gather}
+	Thanks to Lemma~\ref{lemma01} we obtain the control over \( \int_{B_{\sfrac{R}{2}}}^{} \abs{\partial_{x_{\gamma }}	\nabla u}^{2} \dd{x} \). By the arbitrariness of \( \gamma \) we control \( \int_{B_{\sfrac{R}{2}}}^{} \abs{\nabla ^{2}u}^{2} \dd{x} \) as claimed.
 \end{proof}

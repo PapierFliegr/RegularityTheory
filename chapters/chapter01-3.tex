@@ -1,0 +1,54 @@
+\section{Decay estimates for systems with constant coefficients}
+
+\begin{lem}[]
+	Let \( A=A_{ij}^{\alpha \beta } \) be a constant matrix satisfying the Legendre-Hadamard condition~\eqref{LH} for some \( \lambda > 0 \), let \( \Lambda = \abs{A} \) and let \( u \in  H_{loc}^{1}(\Omega ; \mathbb{R}^{m})  \) satisfying the system
+	\begin{gather}
+		- \sum\limits_{\alpha \beta j}^{} \partial_{x_{\alpha }} \left( A_{ij}^{\alpha \beta } \partial_{x_{\beta}}  u^{j} \right) = 0, \qquad \forall  i \in \{ 1,2,\ldots , m \}
+	\end{gather}
+	Then for \( B_{r}(x_{0}) \subset  B_{R}(x_{0}) \ssubset \Omega  \) it holds
+	\begin{align}
+		\bullet & \int\limits_{B_{r}(x_{0})}^{} \abs{u}^{2} \dd{x} \leq c_{D} \left( \frac{r}{R} \right)^{n} \int\limits_{B_{R}(x_{0})}^{} \abs{u}^{2} \dd{x}  \\
+		\bullet & \int\limits_{B_{r}(x_{0})}^{} \abs{u-u_{x_{0},r}}^{2} \dd{x} \leq c_{E} \left( \frac{r}{R} \right)^{n+2} \int\limits_{B_{R}(x_{0})}^{} \abs{u-u_{x_{0},R}}^{2} \dd{x}
+	\end{align}
+	with \( c_{D}=c_{D}(n,\lambda, \Lambda  ) \) and \( c_{E}=c_{E}(n, \lambda , \Lambda ) \), having used the notation
+	\begin{gather}
+		u_{x_{0},s}:= \frac{1}{\abs{B_{s}(x_{0})}} \int\limits_{B_{s}(x_{0})}^{} u(x)  \dd{x}
+	\end{gather}
+\end{lem}
+
+\section{Regularity up to the boundary}
+
+Let \( u \in H_{0}^{1}(\Omega ; \mathbb{R}^{m})  \) be a weak solution of
+\begin{gather}
+	- \sum\limits_{\alpha \beta j}^{} \partial_{x_{\alpha }} \left( A_{ij}^{\alpha \beta } \partial_{x_{\beta}}  u^{j} \right) = f_{i} - \sum\limits_{\alpha }^{} \partial_{x_{\alpha }} F_{i}^{\alpha }, \qquad i \in \{ 1,2,\ldots,m \}
+\end{gather}
+We make the following hypothesis: \\
+\( f \in L^{2}(\Omega ; \mathbb{R}^{m}) \), \( F \in H^{1}(\Omega ; \mathbb{R}^{m \times n})  \), \( A \in C^{0,1}(\Omega ; \mathbb{R}^{m^{2}\times n^{2}})  \), \\
+\( A(X)  \) satisfies the Legendre-Hadamard condition~\eqref{LH} uniformly with respect to \( x \in \Omega  \), \( \Omega  \) has \( C^{2} \) boundary (we say \( \partial \Omega \in  C^{2} \) ), i.e. the domain \( \Omega  \) is locally the epigraph of a \( C^{2} \) function up to a rigid motion.
+
+\begin{thm}[Regularity up to the boundary]
+	Under the assumptions above, the function \( u \) belongs to \( H^{2}(\Omega ; \mathbb{R}^{m})  \) and moreover \( \exists c = c(\Omega , A, n) > 0 \) such that
+	\begin{gather}
+		\norm{u}_{H^{2}(\Omega ; \mathbb{R}^{m}) } \leq  c \left( \norm{f}_{L^{2}(\Omega ; R^{m})} + \norm{F}_{H^{1}(\Omega ; \mathbb{R}^{m \times n}) } \right).
+	\end{gather}
+	If both the boundary of the domain and the data are sufficiently regular the method can be iterated to obtain higher Regularity of \( u \).
+\end{thm}
+
+\begin{thm}[]
+	Assume in addition to the hypothesis above that \( f \in  H^{k}(\Omega ; \mathbb{R}^{m})  \), \( F \in  H^{k+1}(\Omega ; \mathbb{R}^{m \times n})  \), \( A \in C^{k,1}(\Omega ; \mathbb{R}^{m^{2}\times n^{2}})  \) with \( \Omega  \) such that \( \partial \Omega \in C^{k+2} \). Then \( u \in H^{k+2}(\Omega ; \mathbb{R}^{m})  \)
+\end{thm}
+
+\section{Interior Regularity for Nonlinear Equations}
+
+We see here how the Nirenberg's method is appropriate in dealing with nonlinear PDEs as those arising from Euler-Lagrange equations of non-quadratic functionals. \\
+Consider \( L \in C^{2}(\mathbb{R}^{m \times n}; \mathbb{R})  \) and assume that
+\begin{enumerate}[label=(\roman*)]
+	\item there exists a constant \(  c>0 \) such that \( \abs{\nabla ^{2}L(\xi) } \leq c \), \( \forall \xi \in \mathbb{R}^{m \times n} \)
+	\item \( L \) satisfies a uniform Legendre condition, i.e.
+	      \begin{gather}
+		      \sum\limits_{\alpha , \beta , i ,j }^{} \partial_{p_{j}^{\alpha }} \partial_{p_{j}^{\beta }} L(p) \xi _{i}^{\alpha } \xi _{j}^{\beta } \geq \lambda \abs{ \xi }^{2} \qquad \xi \in \mathbb{R}^{m \times n}
+	      \end{gather}
+	      for some \( \lambda >0  \) independent of \( p \).
+\end{enumerate}
+To simplify notation we set \( B_{i}^{\alpha }:= \pdv[]{L}{{p_{i}^{\alpha}}} \) and \( A_{ij}^{\alpha \beta } := \pdv[2]{L}{{p_{i}^{\alpha}}{p_{j}^{\beta }}}\)
+
