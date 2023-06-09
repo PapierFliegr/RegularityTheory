@@ -3,7 +3,7 @@
 \begin{lem}[]
 	Let \( A=A_{ij}^{\alpha \beta } \) be a constant matrix satisfying the Legendre-Hadamard condition~\eqref{LH} for some \( \lambda > 0 \), let \( \Lambda = \abs{A} \) and let \( u \in  H_{loc}^{1}(\Omega ; \mathbb{R}^{m})  \) satisfying the system
 	\begin{gather}
-		- \sum\limits_{\alpha \beta j}^{} \partial_{x_{\alpha }} \left( A_{ij}^{\alpha \beta } \partial_{x_{\beta}}  u^{j} \right) = 0, \qquad \forall  i \in \{ 1,2,\ldots , m \}
+		- \sum\limits_{\alpha, \beta, j}^{} \partial_{x_{\alpha }} \left( A_{ij}^{\alpha \beta } \partial_{x_{\beta}}  u^{j} \right) = 0, \qquad \forall  i \in \{ 1,2,\ldots , m \}
 	\end{gather}
 	Then for \( B_{r}(x_{0}) \subset  B_{R}(x_{0}) \ssubset \Omega  \) it holds
 	\begin{align}
@@ -20,7 +20,7 @@
 
 Let \( u \in H_{0}^{1}(\Omega ; \mathbb{R}^{m})  \) be a weak solution of
 \begin{gather}
-	- \sum\limits_{\alpha \beta j}^{} \partial_{x_{\alpha }} \left( A_{ij}^{\alpha \beta } \partial_{x_{\beta}}  u^{j} \right) = f_{i} - \sum\limits_{\alpha }^{} \partial_{x_{\alpha }} F_{i}^{\alpha }, \qquad i \in \{ 1,2,\ldots,m \}
+	- \sum\limits_{\alpha, \beta, j}^{} \partial_{x_{\alpha }} \left( A_{ij}^{\alpha \beta } \partial_{x_{\beta}}  u^{j} \right) = f_{i} - \sum\limits_{\alpha }^{} \partial_{x_{\alpha }} F_{i}^{\alpha }, \qquad i \in \{ 1,2,\ldots,m \}
 \end{gather}
 We make the following hypothesis: \\
 \( f \in L^{2}(\Omega ; \mathbb{R}^{m}) \), \( F \in H^{1}(\Omega ; \mathbb{R}^{m \times n})  \), \( A \in C^{0,1}(\Omega ; \mathbb{R}^{m^{2}\times n^{2}})  \), \\

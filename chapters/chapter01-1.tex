@@ -1,11 +1,12 @@
 \chapter{TBD}
 
 \section{Elliptic Systems}
+
 \underline{Some info about existence of weak solutions}
 
-We consider functions \(u: \Omega \subset \mathbb{R}^{n} \to \mathbb{R}^{m}\). We use Greek letters to indicate components of vectors in the starting domain (so that \(\alpha,\beta \in \{1,2,\dots,n\} \)) and we use latin letters to indicate components of vectors in teh target domain (so that \(i.j \in \{1,2,\dots,n\} \)). Furthermore, we work with matrices with 4 indices (rank-four tensors). As usually done for elliptic equations we will define ellipticity as the positive semi-definiteness of the tensor, namely the Legendre condition~\eqref{E} below:
+We consider functions \(u: \Omega \subset \mathbb{R}^{n} \to \mathbb{R}^{m}\). We use Greek letters to indicate components of vectors in the starting domain (so that \(\alpha,\beta \in \{1,2,\dots,n\} \)) and we use latin letters to indicate components of vectors in the target domain (so that \(i,j \in \{1,2,\dots,m\} \)). Furthermore, we work with matrices with 4 indices (rank-four tensors). As usually done for elliptic equations we will define ellipticity as the positive semi-definiteness of the tensor, namely the Legendre condition~\eqref{E} below:
 \begin{gather}
-	\exists c > 0 : \sum_{\alpha,\beta,i,j} A_{ij}^{\alpha\beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} \geq c \abs{\xi}^{2}, \forall \xi \in \mathbb{R}^{m \times n} \tag{E}\label{E}
+	\exists c > 0 : \sum_{\alpha,\beta,i,j} A_{ij}^{\alpha\beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} \geq c \abs{\xi}^{2}, \qquad \forall \xi \in \mathbb{R}^{m \times n} \tag{E}\label{E}
 \end{gather}
 We can employ the condition~\eqref{E} to prove existence and uniqueness results for
 \begin{gather}
@@ -33,12 +34,12 @@ The~\eqref{LH} condition is strictly weaker than~\eqref{E}, as the following exa
 \begin{exm}[\eqref{LH} is weaker than~\eqref{E}]
 	Let \(m=n=2\) and let \(A_{ij}^{\alpha \beta}\) be such that
 	\begin{gather}
-		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} = \det{\xi} + \varepsilon \abs{\xi}^{2}
+		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} = \det \xi + \varepsilon \abs{\xi}^{2}
 	\end{gather}
 	for some \(\varepsilon \geq 0\) to be chosen later.\\
-	Since any rank-one matrix \(\xi = a \otimes b\) has \(\det{\xi}=0\), the~\eqref{LH} condition is fulfilled with \(\lambda = \varepsilon \). On the other hand for \(\overline{\xi} = \diag(t,-t), t \neq 0\), we get
+	Since any rank-one matrix \(\xi = a \otimes b\) has \(\det \xi =0\), the~\eqref{LH} condition is fulfilled with \(\lambda = \varepsilon \). On the other hand for \(\overline{\xi} = \diag(t,-t), t \neq 0\), we get
 	\begin{gather}
-		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \overline{\xi}_{\alpha}^{i} \overline{\xi}_{\beta}^{j} = \det{\overline{\xi}} + \varepsilon \abs{\overline{\xi}}^{2} = -t^{2}+2 \varepsilon t^{2} = t^{2}(2 \varepsilon -1)
+		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \overline{\xi}_{\alpha}^{i} \overline{\xi}_{\beta}^{j} = \det \overline{\xi} + \varepsilon \vert \overline{\xi} \vert^{2} = -t^{2}+2 \varepsilon t^{2} = t^{2}(2 \varepsilon -1)
 	\end{gather}
 	and the Legendre condition~\eqref{E} fails for \(2 \varepsilon-1 <0\).
 \end{exm}
@@ -53,9 +54,9 @@ We want to study the local behavior of the weak solutions \(u \in H_{loc}^{1}(\O
 	- \sum_{\alpha, \beta, j} \partial_{x_\alpha} (A_{ij}^{\alpha \beta} \partial_{x_{\beta}} u^{j}) = f_{i} - \sum_{\alpha}^{} \partial_{x_{\alpha}} F_{i}^{\alpha}\qquad i=1,\dots,m
 \end{gather}
 with \(A_{ij}^{\alpha \beta} \in L^{\infty}(\Omega;\mathbb{R}), f_{i}\in L^{2}_{loc}(\Omega;\mathbb{R}), F_{i}^{\alpha}\in L_{loc}^{2}(\Omega;\mathbb{R})\).\\
-In what follows we will always assume \(\Omega \subset \mathbb{R}^{m}\) to be an open, bounded and regular domain (here \(\Omega \) regular means that \(\Omega \) is locally the epigraph of a \(C^{1}\) function of \((n-1)\)-variables, written in a suitable system of coordinates, near any boundary point).\\
+In what follows we will always assume \(\Omega \subset \mathbb{R}^{m}\) to be an open, bounded and regular domain (here \(\Omega \) regular means that \(\Omega \) is locally the epigraph of a \(C^{1}\) function of \((n-1)\) variables, written in a suitable system of coordinates, near any boundary point).\\
 We will see how to use a Caccioppoli-Leray inequality to prove existence of higher-order weak derivatives of \(u\) and suitable integrability results thereof. We will moreover turn such estimates into actual regularity results thanks to Sobolev embeddings. The idea above is due L. Nirenberg.\\
-We use the symbol \(\abs{\cdot}\) to denote the Hilbert-Schmidt norm of matrices and tensors, even though some estimates would be true also for the smaller operator norm.
+We use the symbol \(\vert \cdot \vert \) to denote the Hilbert-Schmidt norm of matrices and tensors, even though some estimates would be true also for the smaller operator norm.
 We set
 \begin{gather}
 	\abs{A_{ij}^{\alpha \beta}}^{2} = \sum_{\alpha, \beta, j}  {(A_{ij}^{\alpha \beta})}^{2}
@@ -64,7 +65,7 @@ We set
 \begin{thm}[Caccioppoli-Leray inequality]
 	If the Borel coefficients \(A_{ij}^{\alpha \beta}\) satisfy the Legendre condition with \(\lambda>0\), namely
 	\begin{gather}
-		\sum_{\alpha,\beta,i,j} A_{ij}^{\alpha\beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} \geq \lambda \abs{\xi}^{2}, \forall \xi \in \mathbb{R}^{m \times n}
+		\sum_{\alpha,\beta,i,j} A_{ij}^{\alpha\beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} \geq \lambda \abs{\xi}^{2}, \qquad \forall \xi \in \mathbb{R}^{m \times n}
 	\end{gather}
 	and
 	\begin{gather}
@@ -72,7 +73,7 @@ We set
 	\end{gather}
 	then there exists a positive constant \(C_{CL} = C_{CL}(\lambda, \Lambda)\) such that, for any ball \(B_{R}(x_{0})\subset \subset \Omega \) and any \(k \in \mathbb{R}^{m}\) it holds
 	\begin{gather}
-		C_{CL}\int\limits_{B_{\sfrac{R}{2}}(x_{0})}^{} \abs{\nabla u}^{2} \dd{x} \leq R^{-2}\int\limits_{B_{R}(x_{0})}^{} \abs{u(x)-k}^{2} \dd{x} + R^{2}\int\limits_{B_{R}(x_{0})} \abs{f(x)}^{2} \dd{x} +  \int\limits_{B_{R}(x_{0})} \abs{F(x)}^{2} \dd{x} \tag{CLI}\label{CLI}
+		C_{CL}\int\limits_{B_{\frac{R}{2}}(x_{0})}^{} \abs{\nabla u}^{2} \dd{x} \leq R^{-2}\int\limits_{B_{R}(x_{0})}^{} \abs{u(x)-k}^{2} \dd{x} + R^{2}\int\limits_{B_{R}(x_{0})} \abs{f(x)}^{2} \dd{x} +  \int\limits_{B_{R}(x_{0})} \abs{F(x)}^{2} \dd{x} \tag{CLI}\label{CLI}
 	\end{gather}
 \end{thm}
 \begin{remark}
@@ -129,12 +130,12 @@ We set
 	We can choose \(\varepsilon \) so small that \(\frac{4 \Lambda \varepsilon}{R} = \frac{\lambda}{4}\) and absorb the Dirichlet term on the r.h.s.\ of the equation (meaning that it can be subtracted from both sides and still give a positive term on the left).\\
 	Finally, one concludes the proof observing that
 	\begin{gather}
-		\int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x} \geq \int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla u}^{2} \dd{x}
+		\int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x} \geq \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u}^{2} \dd{x}
 	\end{gather}
 \end{proof}
 Observe that the proof shows that in \(I_{2}\) one can have a better estimate noting that \(\abs{\nabla u}=0\) on \(B_{\sfrac{R}{2}}\).
 \begin{gather}
-	I_{2}:= 2 \int\limits_{B_{R}}^{} \eta \abs{A} \abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x} = 2 \int\limits_{B_{R}\setminus B_{\sfrac{R}{2}}}^{} \eta \abs{A}\abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x}.
+	I_{2}:= 2 \int\limits_{B_{R}}^{} \eta \abs{A} \abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x} = 2 \int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \eta \abs{A}\abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x}.
 \end{gather}
 This observation is indeed the starting point of the Widman's technique below.
 

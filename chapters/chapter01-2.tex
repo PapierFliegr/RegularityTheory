@@ -4,21 +4,21 @@ A sharp version of the Caccioppoli-Leray inequality~\eqref{CLI} has been proven 
 We can illustrate that in the simple case of \(f=0, F=0\).\\
 Observe that, with the notation of the~\eqref{CLI} proof, since \(\abs{\nabla u}\leq \frac{4}{R} \chi_{B_{R}\setminus B_{\sfrac{R}{2}}}\) one obtains
 \begin{gather}
-	\int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} leq \frac{c}{R^{2}} \int\limits_{B_{R} \setminus B_{\sfrac{R}{2}}}^{} \abs{u(x)-k}^{2} \dd{x} \label{001}
+	\int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} leq \frac{c}{R^{2}} \int\limits_{B_{R} \setminus B_{\frac{R}{2}}}^{} \abs{u(x)-k}^{2} \dd{x} \label{001}
 \end{gather}
 for some positive constant \(c\) independent of \(R\).\\
 Now the idea is to choose \(\kappa := \fint_{B_{R}\setminus B_{\sfrac{R}{2}}} u(x) \dd{x}\) so that we can estimate the r.h.s of~\eqref{001} using the Poincarè inequality with explicit scaling, i.e.
 \begin{gather}
-	\int\limits_{B_{R}\setminus B_{\sfrac{R}{2}}}^{} \abs{u(x)-\fint\limits_{B_{R}\setminus B_{\sfrac{R}{2}}}^{} u \dd{x} }^{2} \dd{x} \leq cR^{2}\int\limits_{B_{R}\setminus B_{\sfrac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}
+	\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{u(x)-\fint\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} u \dd{x} }^{2} \dd{x} \leq cR^{2}\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}
 \end{gather}
 to get
 \begin{align}
-	                       & \int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}\setminus B_{\sfrac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}  \\
-	\Leftrightarrow  (c+1) & \int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}}^{} \abs{\nabla u(x)}^{2} \dd{x}
+	                       & \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}  \\
+	\Leftrightarrow  (c+1) & \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}}^{} \abs{\nabla u(x)}^{2} \dd{x}
 \end{align}
 Setting \( \vartheta := \frac{c}{c+1}<1\) we get
 \begin{gather}
-	\int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq \vartheta \int\limits_{B_{R}}^{} \abs{\nabla u(x)}^{2} \dd{x}
+	\int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq \vartheta \int\limits_{B_{R}}^{} \abs{\nabla u(x)}^{2} \dd{x}
 \end{gather}
 \underline{Iterating} the previous estimates \(d\) times for radii
 \begin{gather}
@@ -97,21 +97,21 @@ Weak derivatives commute:
 Hence \( \int \nabla (\partial_{x_{\alpha }}u) \nabla \varphi  \dd{x} = -\int f \partial_{x_{\alpha }}\varphi  \dd{x} \) or \( -\nabla (\partial_{x_{\alpha }}u) = \partial_{x_{\alpha}}f \).\\
 Hence, for every ball \( B_{R} (x_{0}) \ssubset \Omega  \) (\( \overline{B_{R} (x_{0})} \subset \Omega  \)) we use the Caccioppoli-Leray inequality~\eqref{CLI}  to get:
 \begin{gather}
-	C_{CL} \int\limits_{B_{\sfrac{R}{2}}(x_{0})}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
+	C_{CL} \int\limits_{B_{\frac{R}{2}}(x_{0})}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
 \end{gather}
 that provides an explicit bound on the \( H_{loc}^{2} \) norm of \( u \) in terms of its \( H^{1} \) norm.\\
 \par
 In the previous discussion we have considered \( u \in H_{loc^{1}}(\Omega ; \mathbb{R})  \) to be a solution of the Poisson equation \( -\nabla u = f \) in \( \Omega  \) with \( f \in L^{2}(\Omega ) \). Assuming \( u\in H_{loc}^{2} \) we have obtained the following Caccioppoli-Leray estimate:
 \begin{gather}
-	C_{CL} \int\limits_{B_{\sfrac{R}{2}}(x_{0})}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
+	C_{CL} \int\limits_{B_{\frac{R}{2}}(x_{0})}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
 \end{gather}
 Can we remove the \enquote{a priori} regularity assumption?\\
 Here, for the Poisson equation, it is simple.\\
 Consider the convolution \( u \ast \rho_{\varepsilon } \). Since \( -\Delta  u = f \) we have \( -\Delta  (u \ast \rho_{\varepsilon }) = f\ast \rho _{\varepsilon }\).\\
 Now observe that
 \begin{align}
-	C_{CL} \int\limits_{B_{\sfrac{R}{2}}}^{} \abs{\nabla (\partial_{x_{\alpha }}u\ast \rho _{\varepsilon })}*2 \dd{x} & \leq \frac{1}{R^{2}}\int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u \ast \rho _{\varepsilon }}^{2} \dd{x} + R^{2}\int\limits_{B_{R}}^{} \abs{f\ast \rho _{\varepsilon }}^{2} \dd{x}  \\
-	                                                                                                                  & \leq  \frac{1}{R^{2}} \int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u}^{2} \dd{x} + R^{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}
+	C_{CL} \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla (\partial_{x_{\alpha }}u\ast \rho _{\varepsilon })}*2 \dd{x} & \leq \frac{1}{R^{2}}\int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u \ast \rho _{\varepsilon }}^{2} \dd{x} + R^{2}\int\limits_{B_{R}}^{} \abs{f\ast \rho _{\varepsilon }}^{2} \dd{x}  \\
+	                                                                                                                 & \leq  \frac{1}{R^{2}} \int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u}^{2} \dd{x} + R^{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}
 \end{align}
 As a result \( \forall \alpha ,\beta \, \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon })}_{L_{loc}^{2}} \leq  C \). This means that, up to subsequences \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \myxrightharpoonup[\varepsilon  \to 0]{L^{2}} g\). Since \( \partial_{x_{\alpha }}(u\ast \rho _{\varepsilon }) \myxrightarrow[]{L^{2}} \partial_{x_{\alpha }} u \), we have that \( g = \partial_{x_{\alpha }}\partial_{x_{\beta}}u\) and that the whole sequence \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \) converges to \( \partial_{x_{\alpha }}\partial_{x_{\beta}}u \). \\
 As a result \( \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}u}_{L_{loc}^{2}} \leq  C \) and \( u \in H_{loc}^{2} (\Omega )  \).\\
@@ -181,7 +181,7 @@ We now state and prove the first interior regularity theorem.
 	\end{center}
 	The general result can then be obtained by a compactness and covering argument (Exercise).\\
 	For the case of a ball we need to prove that
-	\[ \int\limits_{B_{\sfrac{R}{2}(x_{0}) }}^{} \abs{\nabla ^{2}u}^{2} \dd{x} \leq c \left( \int\limits_{B_{2R}(x_{0})}^{} \abs{u}^{2} \dd{x} + \int\limits_{B_{2R}(x_{0})}^{} \abs{f}^{2} \dd{x} + \int\limits_{B_{2R}(x_{0})}^{} \abs{\nabla F}^{2} \dd{x} \right) \] for every \( x_{0} \in \Omega' \).
+	\[ \int\limits_{B_{\frac{R}{2}(x_{0}) }}^{} \abs{\nabla ^{2}u}^{2} \dd{x} \leq c \left( \int\limits_{B_{2R}(x_{0})}^{} \abs{u}^{2} \dd{x} + \int\limits_{B_{2R}(x_{0})}^{} \abs{f}^{2} \dd{x} + \int\limits_{B_{2R}(x_{0})}^{} \abs{\nabla F}^{2} \dd{x} \right) \] for every \( x_{0} \in \Omega' \).
 \end{remark}
 
 \begin{proof}
