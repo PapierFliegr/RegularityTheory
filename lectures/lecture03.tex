@@ -1,0 +1,102 @@
+\chapter{Lecture 03}
+
+\section{Continuity via embedding}
+
+The Sobolev embedding theorem for \(W^{1,p}(\Omega; \mathbb{R})\) says that
+\begin{align}
+	\begin{cases}
+		p<n \qquad   & W^{1,p}(\Omega; \mathbb{R}) \hookrightarrow L^{p^{\star}}(\Omega;\mathbb{R}) \quad \text{continuously} \quad p^{\star}=\frac{np}{n-p} \\
+		p=n \qquad   & W^{1,n}(\Omega; \mathbb{R}) \hookrightarrow L^{q^{\star}}(\Omega;\mathbb{R}) \quad \text{compactly} \quad \forall 1 \leq q < \infty   \\
+		p > n \qquad & W^{1,p}(\Omega; \mathbb{R}) \hookrightarrow C^{0, 1-\sfrac{n}{p}}(\Omega;\mathbb{R}) \quad \text{continuously}
+	\end{cases}
+\end{align}
+Hence a way to prove continuity of a Sobolev function is to prove that it belongs to \(W^{1,p}\) for \(p>n\).
+
+\section{Embedding for higher order Sobolev spaces}
+
+We recall that higher order Sobolev spaces \(W^{k,p}(\Omega; \mathbb{R})\) with \(k \geq 1\) integer and \(1 \leq p \leq \infty \) are recursively defined as
+\begin{gather}
+	W^{k,p}(\Omega, \mathbb{R}):= \{ u \in W^{1,p}(\Omega; \mathbb{R}): \nabla u \in W^{k-1,p}(\Omega; \mathbb{R}^{n})\}.
+\end{gather}
+Another way to prove continuity, applicable if \(p < n\), is to use \(W^{k,p}\) for \(k\) large enough. In fact, it holds true that:
+\begin{enumerate}[label= (\arabic*)]
+	\item if \(kp<n\) then \(W^{k,p}(\Omega; \mathbb{R})\hookrightarrow L^{p}(\Omega;\mathbb{R})\) for all \(1 \leq q \leq p_{k}^{\star}\), when \(p_{k}^{\star}=\frac{np}{n-kp}\)
+	\item if \(kp=n\) then \(W^{k,p}(\Omega; \mathbb{R}) \hookrightarrow L^{q}(\Omega; \mathbb{R}) \) for all \( 1 \leq q\leq \infty \)
+	\item if \( kp > n \) and \( k-\frac{n}{p}\notin \mathbb{N}, W^{k,p}(\Omega;\mathbb{R}) \hookrightarrow C^{l,\alpha}(\overline{\Omega; \mathbb{R}})\) for \( l= \left\lfloor k-\frac{n}{p} \right\rfloor  \) and \( 0 \leq \alpha\leq k-\frac{n}{p}-l \)
+	\item if \( kp> n \) and \( k-\frac{n}{p}=l+1 \in \mathbb{N}, W^{k,p}(\Omega; \mathbb{R}) \hookrightarrow C^{l,\alpha} (\overline{\Omega}; \mathbb{R})\) for all \( 0 \leq \alpha < 1 \)
+\end{enumerate}
+
+\section{A priori estimates and the Nirenberg method}
+
+If \( u \in  H_{loc}^{1} (\Omega; \mathbb{R})  \) (for the moment we are not interested at the behavior of \( u \) at \( \partial \Omega \)) is a weak solution of a system of elliptic PDEs we cannot apply previous remark to prove classical regularity, i.e.\ differentiability of \( u \) without assuming existence and some integrability of higher order weak derivatives of \( u \). In fact the previous remark is not really exploiting the equation.\\
+\par
+\underline{How to gain better integrability?}\\
+What   follows goes under the name of \underline{Nirenberg's method}.\\
+Let us consider the simplest setting and consider a solution \( u \in H_{loc}^{1} (\Omega)  \) of the Poisson equation
+\begin{gather}
+	- \Delta u = f, \qquad f \in L_{loc}^{2} (\Omega ;\mathbb{R})
+\end{gather}
+We want to prove that \( u \in H_{loc}^{2} (\Omega ; \mathbb{R}) =W_{loc}^{2,2} (\Omega ;\mathbb{R})  \), as this will be the first step to transfer regularity information from the data \( f \) to the solution \( u \).\\
+\\
+Let us start with supposing that we already knew that \( \partial_{x_{\alpha }} u \in H_{loc}^{1} (\Omega ;\mathbb{R})  \), then we know that
+\begin{gather}
+	-\Delta (\partial_{x_{\alpha }} u) = \partial_{x_{\alpha }} f \qquad \text{in a weak sense}
+\end{gather}
+To check it, test \( -\Delta u=f \) with \( \partial_{x_{\alpha }} \varphi  \) and integrate by parts to get
+\begin{align}
+	\int \nabla u \nabla (\partial_{x_{\alpha }}\varphi )  \dd{x}           & = \int f \partial_{x_{\alpha }}\varphi  \dd{x}  \\
+	\overset{=}{\int \nabla \partial_{x_{\alpha }}(\nabla \varphi)  \dd{x}} & \overset{I.P.}{=} - \int \underbrace{\partial_{x_{\alpha }} \Delta u}_{\Delta (\partial_{x_{\alpha }} u) } \cdot \Delta \varphi \dd{x} = - \int \Delta (\partial_{x_{\alpha }}u) \Delta \varphi  \dd{x}
+\end{align}
+Weak derivatives commute:
+\begin{gather}
+	\int \partial_{1}\partial_{2} u \varphi  \dd{x} \overset{I.P.}{=} \int u \partial_{1} \partial_{2} \varphi  \dd{x} \overset{\varphi \text{ is regular}}{=} \int u \partial_{2}\partial_{1} \varphi \dd{x} \overset{I.P.}{=} \int \partial_{2}\partial_{1}u \varphi \dd{x}
+\end{gather}
+Hence \( \int \nabla (\partial_{x_{\alpha }}u) \nabla \varphi  \dd{x} = -\int f \partial_{x_{\alpha }}\varphi  \dd{x} \) or \( -\nabla (\partial_{x_{\alpha }}u) = \partial_{x_{\alpha}}f \).\\
+Hence, for every ball \( B_{R} (x_{0}) \ssubset \Omega  \) (\( \overline{B_{R} (x_{0})} \subset \Omega  \)) we use the Caccioppoli-Leray inequality~\eqref{CLI}  to get:
+\begin{gather}
+	C_{CL} \int\limits_{B_{\frac{R}{2}}(x_{0})}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
+\end{gather}
+that provides an explicit bound on the \( H_{loc}^{2} \) norm of \( u \) in terms of its \( H^{1} \) norm.\\
+\par
+In the previous discussion we have considered \( u \in H_{loc^{1}}(\Omega ; \mathbb{R})  \) to be a solution of the Poisson equation \( -\nabla u = f \) in \( \Omega  \) with \( f \in L^{2}(\Omega ) \). Assuming \( u\in H_{loc}^{2} \) we have obtained the following Caccioppoli-Leray estimate:
+\begin{gather}
+	C_{CL} \int\limits_{B_{\frac{R}{2}}(x_{0})}^{} \abs{\nabla (\partial_{x_{\alpha }}u) }^{2} \dd{x} \leq \frac{1}{R^{2}} \int\limits_{B_{R}(x_{0})}^{} \abs{\partial_{x_{\alpha }}U(x) }^{2} \dd{x} + R^{2} \int\limits_{B_{R}(x_{0})}^{} \abs{f(x) }^{2} \dd{x} \qquad \text{\eqref{CLI}}
+\end{gather}
+Can we remove the \enquote{a priori} regularity assumption?\\
+Here, for the Poisson equation, it is simple.\\
+Consider the convolution \( u \ast \rho_{\varepsilon } \). Since \( -\Delta  u = f \) we have \( -\Delta  (u \ast \rho_{\varepsilon }) = f\ast \rho _{\varepsilon }\).\\
+Now observe that
+\begin{align}
+	C_{CL} \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla (\partial_{x_{\alpha }}u\ast \rho _{\varepsilon })}*2 \dd{x} & \leq \frac{1}{R^{2}}\int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u \ast \rho _{\varepsilon }}^{2} \dd{x} + R^{2}\int\limits_{B_{R}}^{} \abs{f\ast \rho _{\varepsilon }}^{2} \dd{x}  \\
+	                                                                                                                 & \leq  \frac{1}{R^{2}} \int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u}^{2} \dd{x} + R^{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}
+\end{align}
+As a result \( \forall \alpha ,\beta \, \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon })}_{L_{loc}^{2}} \leq  C \). This means that, up to subsequences \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \myxrightharpoonup[\varepsilon  \to 0]{L^{2}} g\). Since \( \partial_{x_{\alpha }}(u\ast \rho _{\varepsilon }) \myxrightarrow[]{L^{2}} \partial_{x_{\alpha }} u \), we have that \( g = \partial_{x_{\alpha }}\partial_{x_{\beta}}u\) and that the whole sequence \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \) converges to \( \partial_{x_{\alpha }}\partial_{x_{\beta}}u \). \\
+As a result \( \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}u}_{L_{loc}^{2}} \leq  C \) and \( u \in H_{loc}^{2} (\Omega )  \).\\
+\par
+
+We have used the following result:
+\begin{lem}[Stability of weak derivatives]
+	\( u_{k}\in W^{1,p}(\Omega )\) for some \( 1 < p < \infty, \forall k \in  \mathbb{N} \). Assume \( u_{k} \myxrightarrow[]{} u  \) in \( L^{p} \) and \( \sup_{k}\norm{\nabla u_{k}}_{p}\leq C \), then \( u\in W^{1,p}(\Omega ) \) and \( \nabla u_{k} \myxrightharpoonup[]{} \nabla u \) in \( L^{p} \).
+\end{lem}
+The same idea does not work so easily when the coefficients \( A_{ij}^{\alpha \beta } \) are not constant. In fact in this case differentiating the equation produces \enquote{extra terms}.\\
+Nirenberg's idea is to use difference quotients instead of derivatives. We introduce the notation
+\begin{gather}
+	\Delta _{h, \alpha }u(x) = \frac{u(x+he_{\alpha})-u(x)}{h} =: \frac{\tau _{h, \alpha }U(x)-u(x) }{h }
+\end{gather}
+The following properties can be checked to hold true:
+\begin{enumerate}[label= \( \bullet \)  ]
+	\item Discrete Leibniz rule
+	      \begin{align}
+		      \Delta _{h, \alpha }(uv)
+		       & = (\tau _{h, \alpha } u) \Delta _{h,\alpha }v + (\Delta _{h, \alpha} u) v  \\
+		       & =    (\tau _{h, \alpha } v) \Delta _{h,\alpha }u + (\Delta _{h, \alpha} v) u
+	      \end{align}
+
+	\item Integration by parts rule
+	      \begin{gather}
+		      \int\limits_{\Omega}^{} \varphi (x) \Delta _{h, \alpha } u(x)   \dd{x} = -\int\limits_{\Omega}^{} u(x) \Delta _{-h, \alpha }\varphi (x)    \dd{x}
+	      \end{gather}
+	      for all \( \varphi \in  C_{c}^{1} (\Omega ; \mathbb{R}), \abs{h}< \operatorname{dist}(\operatorname{spt} \varphi, \partial \Omega )  \)
+\end{enumerate}
+The following lemma provides a characterization of \( W^{1,p} \) functions with \( p>1 \), in terms of uniform \( L^{p} \) bounds of the corresponding discrete partial derivatives.
+

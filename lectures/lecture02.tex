@@ -1,52 +1,4 @@
-\chapter{TBD}
-
-\section{Elliptic Systems}
-
-\underline{Some info about existence of weak solutions}
-
-We consider functions \(u: \Omega \subset \mathbb{R}^{n} \to \mathbb{R}^{m}\). We use Greek letters to indicate components of vectors in the starting domain (so that \(\alpha,\beta \in \{1,2,\dots,n\} \)) and we use latin letters to indicate components of vectors in the target domain (so that \(i,j \in \{1,2,\dots,m\} \)). Furthermore, we work with matrices with 4 indices (rank-four tensors). As usually done for elliptic equations we will define ellipticity as the positive semi-definiteness of the tensor, namely the Legendre condition~\eqref{E} below:
-\begin{gather}
-	\exists c > 0 : \sum_{\alpha,\beta,i,j} A_{ij}^{\alpha\beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} \geq c \abs{\xi}^{2}, \qquad \forall \xi \in \mathbb{R}^{m \times n} \tag{E}\label{E}
-\end{gather}
-We can employ the condition~\eqref{E} to prove existence and uniqueness results for
-\begin{gather}
-	\begin{cases}
-		- \sum_{\alpha, \beta, j} \partial_{x_\alpha} (A_{ij}^{\alpha \beta} \partial_{x_{\beta}} u^{j}) = f_{i} - \sum_{\alpha}^{} \partial_{x_{\alpha}} F_{i}^{\alpha}\qquad i=1,\dots,m \\
-		u \in H_{0}^{1}(\Omega; \mathbb{R}^{m})
-	\end{cases} \tag{LS}\label{LS}
-\end{gather}
-with data \(f_{i},F_{i}^{\alpha} \in L^{2}(\Omega;\mathbb{R})\).\\
-The weak formulation of the problem is readily obtained as
-\begin{gather}
-	\int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\beta}} u^{i} \partial_{x_{\alpha}} \varphi^{i} \dd{x} = \int\limits_{\Omega}^{} \Big[f_{i} \varphi^{i} + \sum_{\alpha,i}^{} F_{i}^{\alpha} \partial_{x_{\alpha}} \varphi^{i} \Big] \dd{x} \qquad \forall \varphi \in C_c^\infty(\Omega;\mathbb{R}^{m})
-\end{gather}
-The matrix \(A_{ij}^{\alpha \beta}\) defines a bilinear continuous form on \(H_0^1(\Omega;\mathbb{R}^{m})\) by means of the formula
-\begin{gather}
-	{(\varphi,\psi)}_A := \int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} \varphi^{i} \partial_{x_{\beta}} \psi^{j} \dd{x}
-\end{gather}
-If moreover \(A_{ij}^{\alpha \beta}\) satisfies the Legendre condition~\eqref{E}, then the bilinear form is coercive, and we can use the Lax-Milgram theorem to prove existence and uniqueness of weak solutions. Actually one can prove existence and uniqueness under a weaker assumption known as \enquote{Legendre-Hademard}~\eqref{LH} condition:
-\begin{gather}
-	\sum_{\alpha,\beta,i,j}^{} A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j}\geq \lambda \abs{\xi}^{2} \qquad \forall \xi=a \otimes b \tag{LH} \label{LH}
-\end{gather}
-that is the Legendre condition~\eqref{E} for rank-one matrices \(\xi=a\otimes b\).\\
-The~\eqref{LH} condition is strictly weaker than~\eqref{E}, as the following example shows.
-
-\begin{exm}[\eqref{LH} is weaker than~\eqref{E}]
-	Let \(m=n=2\) and let \(A_{ij}^{\alpha \beta}\) be such that
-	\begin{gather}
-		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} = \det \xi + \varepsilon \abs{\xi}^{2}
-	\end{gather}
-	for some \(\varepsilon \geq 0\) to be chosen later.\\
-	Since any rank-one matrix \(\xi = a \otimes b\) has \(\det \xi =0\), the~\eqref{LH} condition is fulfilled with \(\lambda = \varepsilon \). On the other hand for \(\overline{\xi} = \diag(t,-t), t \neq 0\), we get
-	\begin{gather}
-		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \overline{\xi}_{\alpha}^{i} \overline{\xi}_{\beta}^{j} = \det \overline{\xi} + \varepsilon \vert \overline{\xi} \vert^{2} = -t^{2}+2 \varepsilon t^{2} = t^{2}(2 \varepsilon -1)
-	\end{gather}
-	and the Legendre condition~\eqref{E} fails for \(2 \varepsilon-1 <0\).
-\end{exm}
-Nevertheless, the following \underline{Theorem} by G\r{a}rding holds true:
-\begin{thm}
-	Assume that the constant matrix \(A_{ij}^{\alpha \beta}\) satisfies the Legendre-Hademard~\eqref{LH} condition for some positive constant \(\lambda \). Then there exists a unique solution of the linear system~\eqref{LS}.
-\end{thm}
+\chapter{Lecture 02}
 
 \section{Classical regularity theory for the linear problems}
 We want to study the local behavior of the weak solutions \(u \in H_{loc}^{1}(\Omega; \mathbb{R}^{m})\) of a system of equations given by:
@@ -139,3 +91,47 @@ Observe that the proof shows that in \(I_{2}\) one can have a better estimate no
 \end{gather}
 This observation is indeed the starting point of the Widman's technique below.
 
+\section{Widman ``holes filling technique''}
+
+A sharp version of the Caccioppoli-Leray inequality~\eqref{CLI} has been proven by \underline{Widman}.\\
+We can illustrate that in the simple case of \(f=0, F=0\).\\
+Observe that, with the notation of the~\eqref{CLI} proof, since \(\abs{\nabla u}\leq \frac{4}{R} \chi_{B_{R}\setminus B_{\sfrac{R}{2}}}\) one obtains
+\begin{gather}
+	\int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} leq \frac{c}{R^{2}} \int\limits_{B_{R} \setminus B_{\frac{R}{2}}}^{} \abs{u(x)-k}^{2} \dd{x} \label{001}
+\end{gather}
+for some positive constant \(c\) independent of \(R\).\\
+Now the idea is to choose \(\kappa := \fint_{B_{R}\setminus B_{\sfrac{R}{2}}} u(x) \dd{x}\) so that we can estimate the r.h.s of~\eqref{001} using the Poincarè inequality with explicit scaling, i.e.
+\begin{gather}
+	\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{u(x)-\fint\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} u \dd{x} }^{2} \dd{x} \leq cR^{2}\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}
+\end{gather}
+to get
+\begin{align}
+	                       & \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}  \\
+	\Leftrightarrow  (c+1) & \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}}^{} \abs{\nabla u(x)}^{2} \dd{x}
+\end{align}
+Setting \( \vartheta := \frac{c}{c+1}<1\) we get
+\begin{gather}
+	\int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq \vartheta \int\limits_{B_{R}}^{} \abs{\nabla u(x)}^{2} \dd{x}
+\end{gather}
+\underline{Iterating} the previous estimates \(d\) times for radii
+\begin{gather}
+	2^{1}r \to 2^{2}r \to 2^{3}r \to \dots \to 2^{d}r
+\end{gather}
+and choosing \(r\) such that
+\begin{gather}
+	2^{d}r < R< 2^{d+1}r \label{002}
+\end{gather}
+we get
+\begin{gather}
+	\int\limits_{B_{R}}^{} \abs{\nabla u}^{2} \dd{x} \leq \vartheta^{d}\int\limits_{B_{R}}^{} \abs{\nabla u}^{2} \dd{x}
+\end{gather}
+Setting \(\alpha \log_{2}(\sfrac{1}{\vartheta})\), i.e. \(\vartheta = \sfrac{1}{2^{\alpha}}\) we have
+\begin{gather}
+	\vartheta^{d}= \frac{1}{2^{\alpha d}} = {\Big( \frac{1}{2^{d}} \Big)}^{\alpha} \overset{\eqref{002}}{\leq} 2^{\alpha}{\Big( \frac{r}{R} \Big)}^{\alpha}.
+\end{gather}
+Hence,
+\begin{gather}
+	\int\limits_{B_{r}}^{} \abs{\nabla u}^{2} \dd{x} \leq 2^{\alpha} {\Big( \frac{r}{R} \Big)}^{\alpha} \int\limits_{B_{R}}^{} \abs{\nabla u}^{2} \dd{x}.
+\end{gather}
+For \(n=2\) the estimate above implies \(u \in C^{0, \sfrac{\alpha}{2}}(\Omega; \mathbb{R}^{m})\).\\
+In fact the idea that the decay of the \(L^{p}\)-norm of the gradient is related to its Hölder continuity will play a crucial role in the rest of the course, and we will discuss in detail in the next lectures.

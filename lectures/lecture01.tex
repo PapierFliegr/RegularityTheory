@@ -1,0 +1,49 @@
+\chapter{Lecture 01}
+
+\section{Elliptic Systems}
+
+\underline{Some info about existence of weak solutions}
+
+We consider functions \(u: \Omega \subset \mathbb{R}^{n} \to \mathbb{R}^{m}\). We use Greek letters to indicate components of vectors in the starting domain (so that \(\alpha,\beta \in \{1,2,\dots,n\} \)) and we use latin letters to indicate components of vectors in the target domain (so that \(i,j \in \{1,2,\dots,m\} \)). Furthermore, we work with matrices with 4 indices (rank-four tensors). As usually done for elliptic equations we will define ellipticity as the positive semi-definiteness of the tensor, namely the Legendre condition~\eqref{E} below:
+\begin{gather}
+	\exists c > 0 : \sum_{\alpha,\beta,i,j} A_{ij}^{\alpha\beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} \geq c \abs{\xi}^{2}, \qquad \forall \xi \in \mathbb{R}^{m \times n} \tag{E}\label{E}
+\end{gather}
+We can employ the condition~\eqref{E} to prove existence and uniqueness results for
+\begin{gather}
+	\begin{cases}
+		- \sum_{\alpha, \beta, j} \partial_{x_\alpha} (A_{ij}^{\alpha \beta} \partial_{x_{\beta}} u^{j}) = f_{i} - \sum_{\alpha}^{} \partial_{x_{\alpha}} F_{i}^{\alpha}\qquad i=1,\dots,m \\
+		u \in H_{0}^{1}(\Omega; \mathbb{R}^{m})
+	\end{cases} \tag{LS}\label{LS}
+\end{gather}
+with data \(f_{i},F_{i}^{\alpha} \in L^{2}(\Omega;\mathbb{R})\).\\
+The weak formulation of the problem is readily obtained as
+\begin{gather}
+	\int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\beta}} u^{i} \partial_{x_{\alpha}} \varphi^{i} \dd{x} = \int\limits_{\Omega}^{} \Big[f_{i} \varphi^{i} + \sum_{\alpha,i}^{} F_{i}^{\alpha} \partial_{x_{\alpha}} \varphi^{i} \Big] \dd{x} \qquad \forall \varphi \in C_c^\infty(\Omega;\mathbb{R}^{m})
+\end{gather}
+The matrix \(A_{ij}^{\alpha \beta}\) defines a bilinear continuous form on \(H_0^1(\Omega;\mathbb{R}^{m})\) by means of the formula
+\begin{gather}
+	{(\varphi,\psi)}_A := \int\limits_{\Omega}^{} \sum_{\alpha, \beta, i,j}^{} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} \varphi^{i} \partial_{x_{\beta}} \psi^{j} \dd{x}
+\end{gather}
+If moreover \(A_{ij}^{\alpha \beta}\) satisfies the Legendre condition~\eqref{E}, then the bilinear form is coercive, and we can use the Lax-Milgram theorem to prove existence and uniqueness of weak solutions. Actually one can prove existence and uniqueness under a weaker assumption known as \enquote{Legendre-Hademard}~\eqref{LH} condition:
+\begin{gather}
+	\sum_{\alpha,\beta,i,j}^{} A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j}\geq \lambda \abs{\xi}^{2} \qquad \forall \xi=a \otimes b \tag{LH} \label{LH}
+\end{gather}
+that is the Legendre condition~\eqref{E} for rank-one matrices \(\xi=a\otimes b\).\\
+The~\eqref{LH} condition is strictly weaker than~\eqref{E}, as the following example shows.
+
+\begin{exm}[\eqref{LH} is weaker than~\eqref{E}]
+	Let \(m=n=2\) and let \(A_{ij}^{\alpha \beta}\) be such that
+	\begin{gather}
+		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \xi_{\alpha}^{i} \xi_{\beta}^{j} = \det \xi + \varepsilon \abs{\xi}^{2}
+	\end{gather}
+	for some \(\varepsilon \geq 0\) to be chosen later.\\
+	Since any rank-one matrix \(\xi = a \otimes b\) has \(\det \xi =0\), the~\eqref{LH} condition is fulfilled with \(\lambda = \varepsilon \). On the other hand for \(\overline{\xi} = \diag(t,-t), t \neq 0\), we get
+	\begin{gather}
+		\sum_{\alpha, \beta, i,j}^{}  A_{ij}^{\alpha \beta} \overline{\xi}_{\alpha}^{i} \overline{\xi}_{\beta}^{j} = \det \overline{\xi} + \varepsilon \vert \overline{\xi} \vert^{2} = -t^{2}+2 \varepsilon t^{2} = t^{2}(2 \varepsilon -1)
+	\end{gather}
+	and the Legendre condition~\eqref{E} fails for \(2 \varepsilon-1 <0\).
+\end{exm}
+Nevertheless, the following \underline{Theorem} by G\r{a}rding holds true:
+\begin{thm}
+	Assume that the constant matrix \(A_{ij}^{\alpha \beta}\) satisfies the Legendre-Hademard~\eqref{LH} condition for some positive constant \(\lambda \). Then there exists a unique solution of the linear system~\eqref{LS}.
+\end{thm}
