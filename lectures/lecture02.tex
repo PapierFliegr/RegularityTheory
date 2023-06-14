@@ -40,7 +40,7 @@ We set
 	\begin{gather}
 		\int\limits_{B_{R}}^{} \left\langle  A \nabla u, \nabla \varphi \right\rangle \dd{x} - \int\limits_{B_{R}}^{} \left\langle  f,\varphi \right\rangle \dd{x} -\int\limits_{B_{R}}^{} \left\langle  F,\nabla\varphi \right\rangle \dd{x} =0
 	\end{gather}
-	the function \(\varphi:= u \eta^{2}\), where \(\eta \in C_{c}^{\infty}(B_{R}; \mathbb{R})\) is a cut-off function with \(\eta \equiv 1\) in \(B_{\sfrac{R}{2}}\), \(0 \leq \eta \leq 1\) and \(\norm{\nabla \eta}_{\infty} \leq \frac{4}{R}\)
+	the function \(\varphi:= u \eta^{2}\), where \(\eta \in C_{c}^{\infty}(B_{R}; \mathbb{R})\) is a cut-off function with \(\eta \equiv 1\) in \(B_{\frac{R}{2}}\), \(0 \leq \eta \leq 1\) and \(\norm{\nabla \eta}_{\infty} \leq \frac{4}{R}\)
 	\begin{center}
 		\includegraphics[scale=0.45]{pictures/picture01.png}
 	\end{center}
@@ -85,7 +85,7 @@ We set
 		\int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x} \geq \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u}^{2} \dd{x}
 	\end{gather}
 \end{proof}
-Observe that the proof shows that in \(I_{2}\) one can have a better estimate noting that \(\abs{\nabla u}=0\) on \(B_{\sfrac{R}{2}}\).
+Observe that the proof shows that in \(I_{2}\) one can have a better estimate noting that \(\abs{\nabla u}=0\) on \(B_{\frac{R}{2}}\).
 \begin{gather}
 	I_{2}:= 2 \int\limits_{B_{R}}^{} \eta \abs{A} \abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x} = 2 \int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \eta \abs{A}\abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x}.
 \end{gather}
@@ -95,14 +95,14 @@ This observation is indeed the starting point of the Widman's technique below.
 
 A sharp version of the Caccioppoli-Leray inequality~\eqref{CLI} has been proven by \underline{Widman}.\\
 We can illustrate that in the simple case of \(f=0, F=0\).\\
-Observe that, with the notation of the~\eqref{CLI} proof, since \(\abs{\nabla u}\leq \frac{4}{R} \chi_{B_{R}\setminus B_{\sfrac{R}{2}}}\) one obtains
+Observe that, with the notation of the~\eqref{CLI} proof, since \(\abs{\nabla u}\leq \frac{4}{R} \chi_{B_{R}\setminus B_{\frac{R}{2}}}\) one obtains
 \begin{gather}
-	\int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} leq \frac{c}{R^{2}} \int\limits_{B_{R} \setminus B_{\frac{R}{2}}}^{} \abs{u(x)-k}^{2} \dd{x} \label{001}
+	\int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq \frac{c}{R^{2}} \int\limits_{B_{R} \setminus B_{\frac{R}{2}}}^{} \abs{u(x)-k}^{2} \dd{x} \label{001}
 \end{gather}
 for some positive constant \(c\) independent of \(R\).\\
-Now the idea is to choose \(\kappa := \fint_{B_{R}\setminus B_{\sfrac{R}{2}}} u(x) \dd{x}\) so that we can estimate the r.h.s of~\eqref{001} using the Poincarè inequality with explicit scaling, i.e.
+Now the idea is to choose \(\kappa := \fint_{B_{R}\setminus B_{\frac{R}{2}}} u(x) \dd{x}\) so that we can estimate the r.h.s of~\eqref{001} using the Poincarè inequality with explicit scaling, i.e.
 \begin{gather}
-	\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{u(x)-\fint\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} u \dd{x} }^{2} \dd{x} \leq cR^{2}\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}
+	\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \Big\lvert u(x)-\fint\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} u \dd{x} \Big\rvert^{2} \dd{x} \leq cR^{2}\int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}
 \end{gather}
 to get
 \begin{align}
@@ -125,7 +125,7 @@ we get
 \begin{gather}
 	\int\limits_{B_{R}}^{} \abs{\nabla u}^{2} \dd{x} \leq \vartheta^{d}\int\limits_{B_{R}}^{} \abs{\nabla u}^{2} \dd{x}
 \end{gather}
-Setting \(\alpha \log_{2}(\sfrac{1}{\vartheta})\), i.e. \(\vartheta = \sfrac{1}{2^{\alpha}}\) we have
+Setting \(\alpha \log_{2}(\frac{1}{\vartheta})\), i.e. \(\vartheta = \frac{1}{2^{\alpha}}\) we have
 \begin{gather}
 	\vartheta^{d}= \frac{1}{2^{\alpha d}} = {\Big( \frac{1}{2^{d}} \Big)}^{\alpha} \overset{\eqref{002}}{\leq} 2^{\alpha}{\Big( \frac{r}{R} \Big)}^{\alpha}.
 \end{gather}
@@ -133,5 +133,5 @@ Hence,
 \begin{gather}
 	\int\limits_{B_{r}}^{} \abs{\nabla u}^{2} \dd{x} \leq 2^{\alpha} {\Big( \frac{r}{R} \Big)}^{\alpha} \int\limits_{B_{R}}^{} \abs{\nabla u}^{2} \dd{x}.
 \end{gather}
-For \(n=2\) the estimate above implies \(u \in C^{0, \sfrac{\alpha}{2}}(\Omega; \mathbb{R}^{m})\).\\
+For \(n=2\) the estimate above implies \(u \in C^{0, \frac{\alpha}{2}}(\Omega; \mathbb{R}^{m})\).\\
 In fact the idea that the decay of the \(L^{p}\)-norm of the gradient is related to its Hölder continuity will play a crucial role in the rest of the course, and we will discuss in detail in the next lectures.

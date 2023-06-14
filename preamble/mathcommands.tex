@@ -3,12 +3,26 @@
 
 %%% Arrows with sub and superscript
 \newcommand\myxrightarrow[2][]{
-    \xrightarrow[{\raisebox{1.25ex-\heightof{\(\scriptstyle#1\)}}[0pt]{\(\scriptstyle#1\)}}]{#2}%
+	\xrightarrow[{\raisebox{1.25ex-\heightof{\(\scriptstyle#1\)}}[0pt]{\(\scriptstyle#1\)}}]{#2}%
 }
 
 \newcommand\myxrightharpoonup[2][]{
-    \xrightharpoonup[{\raisebox{1.25ex-\heightof{\(\scriptstyle#1\)}}[0pt]{\(\scriptstyle#1\)}}]{#2}%
+	\xrightharpoonup[{\raisebox{1.25ex-\heightof{\(\scriptstyle#1\)}}[0pt]{\(\scriptstyle#1\)}}]{#2}%
 }
 
-\newcommand{\ssubset}{\subset\joinrel\subset}
-\newcommand{\ssupset}{\supset\joinrel\supset}
+\newcommand*{\ssubset}{\subset\joinrel\subset}          % Compactly contained
+\newcommand*{\ssupset}{\supset\joinrel\supset}          % Same but superset
+
+\renewcommand*{\abs}[1]{\left\lvert#1\right\rvert}    % Absolute value
+\renewcommand*{\norm}[1]{\left\lVert#1\right\rVert}   % Norm
+\renewcommand*{\dd}[1]{\mathop{}\!\mathrm{d}#1}         % dx Integral
+\newcommand*{\ddd}[2]{\mathop{}\!\mathrm{d^{#1}}#2}     % dx higher dim
+
+\let\oldfrac\frac% Store \frac                          % Better display of frac in text
+\renewcommand{\frac}[2]{%
+	\mathchoice%
+	{\oldfrac{#1}{#2}}% display style
+	{#1/#2}% text style
+	{#1/#2}% script style
+	{#1/#2}% script-script style
+}
