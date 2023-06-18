@@ -11,7 +11,7 @@ We will see how to use a Caccioppoli-Leray inequality to prove existence of high
 We use the symbol \(\vert \cdot \vert \) to denote the Hilbert-Schmidt norm of matrices and tensors, even though some estimates would be true also for the smaller operator norm.
 We set
 \begin{gather}
-	\abs{A_{ij}^{\alpha \beta}}^{2} = \sum_{\alpha, \beta, j}  {(A_{ij}^{\alpha \beta})}^{2}
+	\abs{A_{ij}^{\alpha \beta}}^{2} = \sum_{\alpha, \beta,i, j}  {(A_{ij}^{\alpha \beta})}^{2}
 \end{gather}
 
 \begin{thm}[Caccioppoli-Leray inequality]
@@ -45,7 +45,7 @@ We set
 		\includegraphics[scale=0.45]{pictures/picture01.png}
 	\end{center}
 	\begin{gather}
-		\pdv[]{\varphi_{i}}{x_{\alpha}} = \pdv[]{}{x_{\alpha}} (\eta^{2}u^{2}) = \eta^{2}\pdv[]{u^{i}}{x_{\alpha}}+2 \eta \pdv[]{\eta}{x_{\alpha}} u^{i},
+		\pdv[{}]{\varphi_{i}}{x_{\alpha}} = \pdv[]{}{x_{\alpha}} (\eta^{2}u^{2}) = \eta^{2}\pdv[]{u^{i}}{x_{\alpha}}+2 \eta \pdv[]{\eta}{x_{\alpha}} u^{i},
 	\end{gather}
 	that is
 	\begin{gather}

@@ -37,7 +37,7 @@ We make the following hypothesis: \\
 \end{thm}
 
 \begin{thm}[]
-	Assume in addition to the hypothesis above that \( f \in  H^{k}(\Omega ; \mathbb{R}^{m})  \), \( F \in  H^{k+1}(\Omega ; \mathbb{R}^{m \times n})  \), \( A \in C^{k,1}(\Omega ; \mathbb{R}^{m^{2}\times n^{2}})  \) with \( \Omega  \) such that \( \partial \Omega \in C^{k+2} \). Then \( u \in H^{k+2}(\Omega ; \mathbb{R}^{m})  \)
+	Assume in addition to the hypothesis above that \( f \in  H^{k}(\Omega ; \mathbb{R}^{m})  \), \( F \in  H^{k+1}(\Omega ; \mathbb{R}^{m \times n})  \), \( A \in C^{k,1}(\Omega ; \mathbb{R}^{m^{2}\times n^{2}})  \) with \( \Omega  \) such that \( \partial \Omega \in C^{k+2} \), then \( u \in H^{k+2}(\Omega ; \mathbb{R}^{m})  \).
 \end{thm}
 
 \section{Interior Regularity for Nonlinear Equations}
@@ -48,11 +48,11 @@ Consider \( L \in C^{2}(\mathbb{R}^{m \times n}; \mathbb{R})  \) and assume that
 	\item there exists a constant \(  c>0 \) such that \( \abs{\nabla ^{2}L(\xi) } \leq c \), \( \forall \xi \in \mathbb{R}^{m \times n} \)
 	\item \( L \) satisfies a uniform Legendre condition, i.e.
 	      \begin{gather}
-		      \sum\limits_{\alpha , \beta , i ,j }^{} \partial_{p_{j}^{\alpha }} \partial_{p_{j}^{\beta }} L(p) \xi _{i}^{\alpha } \xi _{j}^{\beta } \geq \lambda \abs{ \xi }^{2} \qquad \xi \in \mathbb{R}^{m \times n}
+		      \sum\limits_{\alpha , \beta , i ,j }^{} \partial_{p_{i}^{\alpha }} \partial_{p_{j}^{\beta }} L(p) \xi _{i}^{\alpha } \xi _{j}^{\beta } \geq \lambda \abs{ \xi }^{2} \qquad \xi \in \mathbb{R}^{m \times n}
 	      \end{gather}
 	      for some \( \lambda >0  \) independent of \( p \).
 \end{enumerate}
-To simplify notation we set \( B_{i}^{\alpha }:= \pdv[]{L}{{p_{i}^{\alpha}}} \) and \( A_{ij}^{\alpha \beta } := \pdv[]{L}{{p_{i}^{\alpha}}}{{p_{j}^{\beta }}} \) and notice that \( A_{ij}^{\alpha \beta } \) is symmetric w.r.t the transformation \( (\alpha ,i)  \to (\beta , j) \). \\
+To simplify notation we set \( B_{i}^{\alpha }:= \pdv[{}]{L}{{p_{i}^{\alpha}}} \) and \( A_{ij}^{\alpha \beta } := \pdv[{}]{L}{{p_{i}^{\alpha}},p_{j}^{\beta }} \) and notice that \( A_{ij}^{\alpha \beta } \) is symmetric w.r.t the transformation \( (\alpha ,i)  \to (\beta , j) \). \\
 Let \( \Omega \subset \mathbb{R}^{n} \) be an open domain and let \( u \in  H_{loc}^{1}(\Omega ; \mathbb{R}^{m})  \) be local minimizer (see later for the precise definition) of the functional
 \begin{gather}
 	w \mapsto \mathcal{L}(w) := \int\limits_{\Omega}^{} L(\nabla w)  \dd{x}.
@@ -69,13 +69,13 @@ We say that \( u \) is a local minimizer for \( \mathcal{L} \), if for all \( v 
 \begin{gather}
 	\int\limits_{\Omega'}^{} L(\nabla v)  \dd{x}	\geq \int\limits_{\Omega'}^{} L(\nabla u)  \dd{x}
 \end{gather}
-In this case one can obtain the Euler-Lagrange equation considering perturbations of \( u \) of the type \( V_{t}= u +t \varphi  \) with \(  \varphi \in C_{c}^{\infty }(\Omega ; \mathbb{R}^{m})  \) and imposing that it holds (note that \( v_{0}=u \))
+In this case one can obtain the Euler-Lagrange equation considering perturbations of \( u \) of the type \( v_{t}= u +t \varphi  \) with \(  \varphi \in C_{c}^{\infty }(\Omega ; \mathbb{R}^{m})  \) and imposing that it holds (note that \( v_{0}=u \))
 \begin{gather}
 	\int\limits_{\Omega}^{} L(\nabla v_{t})  \dd{x} \geq \int\limits_{\Omega}^{} L(\nabla v_{0})  \dd{x}
 \end{gather}
 or in other words the 1D function \( \Phi (t):= \int_{\Omega}^{} L(\nabla v_{t})  \dd{x}  \) has a local minimum at \( t=0 \), which by the regularity of \( L \) gives \( \Phi '(0)=0  \), or
 \begin{gather}
-	0 = \dv[]{}{t} {\left[ \int\limits_{\Omega}^{} L(\nabla u + t \nabla \varphi )  \dd{x} \right]}_{t=0} = \sum\limits_{\alpha , i}^{} \int\limits_{\Omega}^{} B_{i}^{\alpha }(\nabla u) \pdv[]{\varphi^{i}}{x_{\alpha }} \dd{x}
+	0 = \odv[]{}{t}{\left[ \int\limits_{\Omega}^{} L(\nabla u + t \nabla \varphi )  \dd{x} \right]}_{t=0} = \sum\limits_{\alpha , i}^{} \int\limits_{\Omega}^{} B_{i}^{\alpha }(\nabla u) \pdv[]{\varphi^{i}}{x_{\alpha }} \dd{x}
 \end{gather}
 Applying the same argument to test functions of the form \( \tau _{-h, \gamma }\varphi  \) (here \( \gamma  \) is a fixed coordinate direction corresponding to the unit vector \( e_{\gamma } \) and \( h>0 \)) we get (upon changing variables)
 \begin{gather}
@@ -88,8 +88,8 @@ Subtracting the last two equations and dividing by \( h \)
 Note that, by the regularity assumptions on \( L \) we can write that
 \begin{align}
 	  & B_{i}^{\alpha } (\nabla u(x+h e_{\gamma }) ) -  B_{i}^{\alpha } (\nabla u(x) )  \\
-	= & \int\limits_{0}^{1} \dv[]{}{t} \left[ B_{i}^{\alpha } \left( t\nabla u(x+h e_{\gamma }) +(1-t) \nabla u(x) \right)  \right] \dd{t}  \\
-	= & \sum\limits_{\beta , j}^{} \int\limits_{0}^{1} A_{ij}^{\alpha \beta } \left( t\nabla u(x+h e_{\gamma }) +(1-t) \nabla u(x) \right) \dd{t} \left( \pdv[]{u^{j}}{x_{\beta }}\/(x+h e_{\gamma }) - \pdv[]{u^{j}}{x_{\beta }}\/(x)  \right).
+	= & \int\limits_{0}^{1} \odv[]{}{t} \left[ B_{i}^{\alpha } \left( t\nabla u(x+h e_{\gamma }) +(1-t) \nabla u(x) \right)  \right] \dd{t}  \\
+	= & \sum\limits_{\beta , j}^{} \int\limits_{0}^{1} A_{ij}^{\alpha \beta } \left( t\nabla u(x+h e_{\gamma }) +(1-t) \nabla u(x) \right) \dd{t} \left( \pdv[]{u^{j}}{x_{\beta }}(x+h e_{\gamma }) - \pdv[]{u^{j}}{x_{\beta }}(x)  \right).
 \end{align}
 Setting for convenience
 \begin{gather}
@@ -97,7 +97,7 @@ Setting for convenience
 \end{gather}
 We rewrite the~\eqref{ELh} condition as
 \begin{gather}
-	\sum\limits_{\alpha, \beta , i,j}^{} \int\limits_{\Omega}^{} \widetilde{A}_{ij,h}^{\alpha \beta }(x) \pdv[]{\Delta _{h, \gamma } u^{j}}{x_{\beta }}\/(x) \pdv[]{\varphi ^{i}}{x_{\alpha }}\/(x)   \dd{x} = 0
+	\sum\limits_{\alpha, \beta , i,j}^{} \int\limits_{\Omega}^{} \widetilde{A}_{ij,h}^{\alpha \beta }(x) \pdv[]{\Delta _{h, \gamma } u^{j}}{x_{\beta }}(x) \pdv[]{\varphi ^{i}}{x_{\alpha }}(x)   \dd{x} = 0
 \end{gather}
 Hence the function \( w = \Delta _{h, \gamma } u \) solves the system:
 \begin{gather}
