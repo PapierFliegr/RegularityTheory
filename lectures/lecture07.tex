@@ -1,0 +1,13 @@
+\chapter{Lecture 07}
+
+To solve Hilbert's XIX problem, we would like to apply a classical result by Schauder asserting that if \( w \) is a weak solution if a problem in divergence form:
+\begin{gather}
+	- \sum\limits_{\alpha ,\beta ,j}^{} \partial_{x_{\alpha }} \left( B_{ij}^{\alpha \beta } \partial_{x_{\beta }} w^{j} \right) = 0\qquad i = 1,2,\ldots,m
+\end{gather}
+them \( B \in  C^{0, \alpha }(\Omega ; \mathbb{R}^{m^{2} \times n^{2}}) \Rightarrow w \in C^{1, \alpha }(\Omega ; R^{m}) \) which is to say \( u \in C^{2, \alpha }(\Omega ; R^{m}) \). If we know in addition that \( A_{ij}^{\alpha \beta } \) where \( C^{\infty } \), which is the case if \( L \in  C^{\infty } \), then
+\begin{gather}
+	A_{ij}^{\alpha \beta }(\nabla u) = B_{ij}^{\alpha \beta } \in C^{0, \alpha }(\Omega ; \mathbb{R}^{m^{2} \times n^{2}})
+\end{gather}
+and the Schauder's theory would give \( w \in C^{2, \alpha } \Rightarrow u \in C^{3, \alpha } \Rightarrow B \in C^{2, \alpha } \Rightarrow \ldots \), i.e./ we can bootstrap regularity! \\
+Roughly speaking, the hölderianity result is what we need to bootstrap the argument and prove \( u \in  C^{\infty } \) if \( L \in C^{\infty } \). \\
+But to do so we first need to improve the regularity of \( B(x) = A(\nabla u(x))	\), since at the moment we only know that \( A(\nabla u ) \in H_{loc}^{1}(\Omega ; \mathbb{R}^{m^{2} \times n^{2}}) \), while we would need \( A(\nabla u ) \in C^{0, \alpha }(\Omega ; \mathbb{R}^{m^{2} \times n^{2}})  \). In the case \( n=2, m \in  \mathbb{N} \) we will apply Widman's improvement of~\eqref{CLI} to prove that \( \nabla u \) is a Hölder function. The problem is much harder for \( n >2 \) and required new deep ideas. The celebrated \underline{DeGiorgi-Nash-Moser} theory solves the problem in the scalar case \( m=1 \), while for \( m >1 \) new difficulties arise.

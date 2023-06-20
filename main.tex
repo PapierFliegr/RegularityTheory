@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,openany]{book}
+\documentclass[a4paper]{report}
 
 \input{preamble/packages.tex}
 \input{preamble/setup.tex}
@@ -10,27 +10,16 @@
 \author{Author}
 
 \begin{document}
-
-\frontmatter%
-\input{pages/titlepage.tex}
+\maketitle
 \tableofcontents
-
-\mainmatter%
+% start lessons
 \input{lectures/lecture01.tex}
 \input{lectures/lecture02.tex}
 \input{lectures/lecture03.tex}
-\input{lectures/lecture04.tex}
-\input{lectures/lecture05.tex}
+\input{lectures/lecture04-5.tex}
 \input{lectures/lecture06.tex}
-
-% TODO: Use Gilles Castel Template for report
-
-\newpage
-\appendix
-%\input{appendix/appendix_A.tex}
-
-\backmatter%
+\input{lectures/lecture07.tex}
+% end lessons
 \AtNextBibliography{\small}
 %\printbibliography%
-
 \end{document}
