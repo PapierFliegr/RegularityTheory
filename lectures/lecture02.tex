@@ -53,19 +53,19 @@ We set
 	\end{gather}
 	Plugging in the last equality in the weak formulation
 	\begin{align}
-		0= & \int\limits_{B_{R}}^{} \eta^{2} \left\langle A \nabla u , \nabla u \right\rangle + 2 \int\limits_{B_{R}}^{} \eta \left\langle A \nabla u , u \otimes \nabla \eta \right\rangle  \\
-		   & - \int\limits_{B_{R}}^{} \eta^{2} \left\langle f, u \right\rangle - \int\limits_{B_{R}}^{} \eta^{2} \left\langle F, \nabla u \right\rangle - 2 \int\limits_{B_{R}}^{} \eta \left\langle  F, u \otimes \nabla \eta \right\rangle  \\
+		0= & \int\limits_{B_{R}}^{} \eta^{2} \left\langle A \nabla u , \nabla u \right\rangle + 2 \int\limits_{B_{R}}^{} \eta \left\langle A \nabla u , u \otimes \nabla \eta \right\rangle                                                  \\
+		   & - \int\limits_{B_{R}}^{} \eta^{2} \left\langle f, u \right\rangle - \int\limits_{B_{R}}^{} \eta^{2} \left\langle F, \nabla u \right\rangle - 2 \int\limits_{B_{R}}^{} \eta \left\langle  F, u \otimes \nabla \eta \right\rangle \\
 		=  & : I_{1} + I_{2} -I_{3} - I_{4} - I_{5}
 	\end{align}
 	\begin{align}
 		I_{1}:= & \int\limits_{B_{R}}^{} \eta^{2} \left\langle A \nabla u , \nabla u \right\rangle \dd{x}
-		= \int\limits_{B_{R}}^{} \sum_{\alpha, \beta, i, j} \eta^{2} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} u^{i} \partial_{x_{\beta}} u^{j} \dd{x} \geq \lambda \int\limits_{B_{R}} \eta^{2} \abs{\nabla u}^{2}  \dd{x}  \\
-		I_{2}:= & \, 2 \int\limits_{B_{R}}^{} \eta \left\langle A \nabla u , u \otimes \nabla \eta \right\rangle \dd{x} = 2 \int\limits_{B_{R}}^{} \eta \sum_{\alpha,\beta, i, j} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} u^{i} u^{j} \partial_{x_{\beta}} \eta \dd{x}  \\
-		        & \overset{\text{Cauchy-Schwarz}}{\leq} 2 \int\limits_{B_{R}}^{} \eta \abs{A} \abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x}  \\
-		        & \overset{\text{boundedness of \(\abs{A}\) and \(\norm{\nabla \eta}_{\infty}\)}}{\leq}   \frac{( \Lambda)}{R} \int\limits_{B_{R}}^{} (\eta \abs{\nabla u}) \abs{u} \dd{x}  \\
-		        & \overset{\text{Young \(ab \leq \frac{a^{2}}{2}+\frac{b^{2}}{2}\)}}{\leq} \frac{4 \Lambda}{R} \varepsilon \int\limits_{B_{R}}^{} \eta^{2} \abs{\nabla u}^{2} \dd{x} + \frac{4 \Lambda}{R \varepsilon} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x}  \\
+		= \int\limits_{B_{R}}^{} \sum_{\alpha, \beta, i, j} \eta^{2} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} u^{i} \partial_{x_{\beta}} u^{j} \dd{x} \geq \lambda \int\limits_{B_{R}} \eta^{2} \abs{\nabla u}^{2}  \dd{x}                                              \\
+		I_{2}:= & \, 2 \int\limits_{B_{R}}^{} \eta \left\langle A \nabla u , u \otimes \nabla \eta \right\rangle \dd{x} = 2 \int\limits_{B_{R}}^{} \eta \sum_{\alpha,\beta, i, j} A_{ij}^{\alpha \beta} \partial_{x_{\alpha}} u^{i} u^{j} \partial_{x_{\beta}} \eta \dd{x} \\
+		        & \overset{\text{Cauchy-Schwarz}}{\leq} 2 \int\limits_{B_{R}}^{} \eta \abs{A} \abs{u}\abs{\nabla u}\abs{\nabla \eta} \dd{x}                                                                                                                                \\
+		        & \overset{\text{boundedness of \(\abs{A}\) and \(\norm{\nabla \eta}_{\infty}\)}}{\leq}   \frac{( \Lambda)}{R} \int\limits_{B_{R}}^{} (\eta \abs{\nabla u}) \abs{u} \dd{x}                                                                                 \\
+		        & \overset{\text{Young \(ab \leq \frac{a^{2}}{2}+\frac{b^{2}}{2}\)}}{\leq} \frac{4 \Lambda}{R} \varepsilon \int\limits_{B_{R}}^{} \eta^{2} \abs{\nabla u}^{2} \dd{x} + \frac{4 \Lambda}{R \varepsilon} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x}           \\
 		I_{3}:= & \int\limits_{B_{R}}^{} \left\langle f, \eta^{2} u \right\rangle \dd{x} = \int\limits_{B_{R}}^{} \eta^{2} \sum_{i}^{} f_{i}u^{i} \dd{x}
-		\overset{Young}{\leq} \frac{1}{2 R^{2}} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x} + \frac{R^{2}}{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}  \\
+		\overset{Young}{\leq} \frac{1}{2 R^{2}} \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x} + \frac{R^{2}}{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}                                                                                                                      \\
 		I_{4}:= & \int\limits_{B_{R}}^{} \eta^{2} \left\langle F, \nabla u \right\rangle \dd{x} = \int\limits_{B_{R}}^{} \eta^{2}\sum_{\alpha,i}^{} F_{i}^{\alpha} \partial_{x_{\alpha}} u^{i} \dd{x}
 		\leq \frac{\lambda}{4} \int\limits_{B_{R}}^{} \eta^{2} \abs{\nabla u}^{2} \dd{x} + \frac{1}{\lambda} \int\limits_{B_{R}}^{} \abs{F}^{2} \dd{x}
 		\intertext{By Cauchy-Schwarz inequality, \(\norm{\nabla \eta}_{\infty} \leq \frac{4}{R}\) and Young inequality we have}
@@ -75,8 +75,8 @@ We set
 	Therefore from the weak formulation with \( \varphi = \eta^{2} u\) we obtain
 	\begin{align}
 		\lambda \int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x}
-		 & \leq \int\limits_{B_{R}}^{} \eta^{2} \left\langle A \nabla u, \nabla u \right\rangle \dd{x}  \\
-		 & \leq  \underbrace{(\frac{4 \Lambda \varepsilon}{R}+ \frac{\lambda}{4}) \int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x}}_{\text{Dirichlet term}} + (\frac{4 \Lambda}{R \varepsilon}+\frac{1}{2 R^{2}}+\frac{4}{R^{2}}) \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x} +  \\
+		 & \leq \int\limits_{B_{R}}^{} \eta^{2} \left\langle A \nabla u, \nabla u \right\rangle \dd{x}                                                                                                                                                                                \\
+		 & \leq  \underbrace{(\frac{4 \Lambda \varepsilon}{R}+ \frac{\lambda}{4}) \int\limits_{B_{R}}^{} \eta^{2}\abs{\nabla u}^{2} \dd{x}}_{\text{Dirichlet term}} + (\frac{4 \Lambda}{R \varepsilon}+\frac{1}{2 R^{2}}+\frac{4}{R^{2}}) \int\limits_{B_{R}}^{} \abs{u}^{2} \dd{x} + \\
 		 & \qquad + \frac{R^{2}}{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x} + (\frac{1}{\lambda}+4) \int\limits_{B_{R}}^{} \abs{F}^{2} \dd{x}
 	\end{align}
 	We can choose \(\varepsilon \) so small that \(\frac{4 \Lambda \varepsilon}{R} = \frac{\lambda}{4}\) and absorb the Dirichlet term on the r.h.s.\ of the equation (meaning that it can be subtracted from both sides and still give a positive term on the left).\\
@@ -106,7 +106,7 @@ Now the idea is to choose \(\kappa := \fint_{B_{R}\setminus B_{\frac{R}{2}}} u(x
 \end{gather}
 to get
 \begin{align}
-	                       & \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x}  \\
+	                       & \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}\setminus B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \\
 	\Leftrightarrow  (c+1) & \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla u(x)}^{2} \dd{x} \leq c \int\limits_{B_{R}}^{} \abs{\nabla u(x)}^{2} \dd{x}
 \end{align}
 Setting \( \vartheta := \frac{c}{c+1}<1\) we get

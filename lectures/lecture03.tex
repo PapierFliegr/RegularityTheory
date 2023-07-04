@@ -5,9 +5,9 @@
 The Sobolev embedding theorem for \(W^{1,p}(\Omega; \mathbb{R})\) says that
 \begin{align}
 	\begin{cases}
-		p<n \qquad   & W^{1,p}(\Omega; \mathbb{R}) \hookrightarrow L^{p^{\star}}(\Omega;\mathbb{R}) \quad \text{continuously} \quad p^{\star}=\frac{np}{n-p} \\
-		p=n \qquad   & W^{1,n}(\Omega; \mathbb{R}) \hookrightarrow L^{q^{\star}}(\Omega;\mathbb{R}) \quad \text{compactly} \quad \forall 1 \leq q < \infty   \\
-		p > n \qquad & W^{1,p}(\Omega; \mathbb{R}) \hookrightarrow C^{0, 1-\frac{n}{p}}(\Omega;\mathbb{R}) \quad \text{continuously}
+		p<n \qquad & W^{1,p}(\Omega; \mathbb{R}) \hookrightarrow L^{p^{\star}}(\Omega;\mathbb{R}) \quad \text{continuously} \quad p^{\star}=\frac{np}{n-p} \\
+		p=n \qquad & W^{1,n}(\Omega; \mathbb{R}) \hookrightarrow L^{q^{\star}}(\Omega;\mathbb{R}) \quad \text{compactly} \quad \forall 1 \leq q < \infty   \\
+		p>n \qquad & W^{1,p}(\Omega; \mathbb{R}) \hookrightarrow C^{0, 1-\frac{n}{p}}(\Omega;\mathbb{R}) \quad \text{continuously}
 	\end{cases}
 \end{align}
 Hence a way to prove continuity of a Sobolev function is to prove that it belongs to \(W^{1,p}\) for \(p>n\).
@@ -44,7 +44,7 @@ Let us start with supposing that we already knew that \( \partial_{x_{\alpha }} 
 \end{gather}
 To check it, test \( -\Delta u=f \) with \( \partial_{x_{\alpha }} \varphi  \) and integrate by parts to get
 \begin{align}
-	\int \nabla u \nabla (\partial_{x_{\alpha }}\varphi )  \dd{x}           & = \int f \partial_{x_{\alpha }}\varphi  \dd{x}  \\
+	\int \nabla u \nabla (\partial_{x_{\alpha }}\varphi )  \dd{x}           & = \int f \partial_{x_{\alpha }}\varphi  \dd{x}                                                                                                                                                          \\
 	\overset{=}{\int \nabla \partial_{x_{\alpha }}(\nabla \varphi)  \dd{x}} & \overset{I.P.}{=} - \int \underbrace{\partial_{x_{\alpha }} \Delta u}_{\Delta (\partial_{x_{\alpha }} u) } \cdot \Delta \varphi \dd{x} = - \int \Delta (\partial_{x_{\alpha }}u) \Delta \varphi  \dd{x}
 \end{align}
 Weak derivatives commute:
@@ -67,7 +67,7 @@ Here, for the Poisson equation, it is simple.\\
 Consider the convolution \( u \ast \rho_{\varepsilon } \). Since \( -\Delta  u = f \) we have \( -\Delta  (u \ast \rho_{\varepsilon }) = f\ast \rho _{\varepsilon }\).\\
 Now observe that
 \begin{align}
-	C_{CL} \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla (\partial_{x_{\alpha }}u\ast \rho _{\varepsilon })}*2 \dd{x} & \leq \frac{1}{R^{2}}\int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u \ast \rho _{\varepsilon }}^{2} \dd{x} + R^{2}\int\limits_{B_{R}}^{} \abs{f\ast \rho _{\varepsilon }}^{2} \dd{x}  \\
+	C_{CL} \int\limits_{B_{\frac{R}{2}}}^{} \abs{\nabla (\partial_{x_{\alpha }}u\ast \rho _{\varepsilon })}*2 \dd{x} & \leq \frac{1}{R^{2}}\int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u \ast \rho _{\varepsilon }}^{2} \dd{x} + R^{2}\int\limits_{B_{R}}^{} \abs{f\ast \rho _{\varepsilon }}^{2} \dd{x} \\
 	                                                                                                                 & \leq  \frac{1}{R^{2}} \int\limits_{B_{R}}^{} \abs{\partial_{x_{\alpha }}u}^{2} \dd{x} + R^{2} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x}
 \end{align}
 As a result \( \forall \alpha ,\beta \, \norm{\partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon })}_{L_{loc}^{2}} \leq  C \). This means that, up to subsequences \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \myxrightharpoonup[\varepsilon  \to 0]{L^{2}} g\). Since \( \partial_{x_{\alpha }}(u\ast \rho _{\varepsilon }) \myxrightarrow[]{L^{2}} \partial_{x_{\alpha }} u \), we have that \( g = \partial_{x_{\alpha }}\partial_{x_{\beta}}u\) and that the whole sequence \( \partial_{x_{\alpha }}\partial_{x_{\beta}}(u\ast \rho _{\varepsilon }) \) converges to \( \partial_{x_{\alpha }}\partial_{x_{\beta}}u \). \\
@@ -88,7 +88,7 @@ The following properties can be checked to hold true:
 	\item Discrete Leibniz rule
 	      \begin{align}
 		      \Delta _{h, \alpha }(uv)
-		       & = (\tau _{h, \alpha } u) \Delta _{h,\alpha }v + (\Delta _{h, \alpha} u) v  \\
+		       & = (\tau _{h, \alpha } u) \Delta _{h,\alpha }v + (\Delta _{h, \alpha} u) v    \\
 		       & =    (\tau _{h, \alpha } v) \Delta _{h,\alpha }u + (\Delta _{h, \alpha} v) u
 	      \end{align}
 

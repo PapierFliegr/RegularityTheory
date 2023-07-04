@@ -51,9 +51,9 @@ We now state and prove the first interior regularity theorem.
 	\[ \int\limits_{\Omega}^{} \left\langle \tau _{h}(A \nabla u), \nabla \varphi  \right\rangle  \dd{x} = \int\limits_{\Omega}^{} \left\langle \tau _{h}f, \varphi  \right\rangle  \dd{x} \]
 	subtracting the two previous equations anf dividing by \( h \) we have that (using Leibniz)
 	\begin{align}
-		  & \int\limits_{\Omega}^{} \frac{1}{h} \left[ \left\langle A \nabla u, \nabla \varphi  \right\rangle  \right]- \left\langle \tau _{h}(A \nabla u), \nabla \varphi  \right\rangle \dd{x}  \\
-		= & \int\limits_{\Omega}^{} \left\langle \underbrace{A \nabla u - \tau _{h}(A \nabla u)}_{h}, \nabla \varphi  \right\rangle  \dd{x}  \\
-		= & \int\limits_{\Omega}^{} \left\langle \Delta _{h}(A \nabla u), \nabla \varphi  \right\rangle  \dd{x}  \\
+		  & \int\limits_{\Omega}^{} \frac{1}{h} \left[ \left\langle A \nabla u, \nabla \varphi  \right\rangle  \right]- \left\langle \tau _{h}(A \nabla u), \nabla \varphi  \right\rangle \dd{x} \\
+		= & \int\limits_{\Omega}^{} \left\langle \underbrace{A \nabla u - \tau _{h}(A \nabla u)}_{h}, \nabla \varphi  \right\rangle  \dd{x}                                                      \\
+		= & \int\limits_{\Omega}^{} \left\langle \Delta _{h}(A \nabla u), \nabla \varphi  \right\rangle  \dd{x}                                                                                  \\
 		= & \int\limits_{\Omega}^{} \left\langle \tau _{h} A \nabla (\Delta _{h} u), \nabla \varphi \right\rangle  + \left\langle (\Delta _{h}A) \nabla u, \nabla \varphi  \right\rangle \dd{x}  \\
 		= & \int\limits_{\Omega}^{} \left\langle \Delta _{h}f, \varphi  \right\rangle  \dd{x},
 	\end{align}
@@ -74,17 +74,19 @@ We now state and prove the first interior regularity theorem.
 	\end{gather}
 	The R.H.S\ of the inequality above can be estimated by the~\eqref{CLI}. In fact \( \int_{B_{R+h}}^{} \abs{\nabla u}^{2} \dd{x} \leq \int_{B_{\frac{3}{2}R}}^{} \abs{\nabla u}^{2} \dd{x} \) which can be in turn be estimated by~\eqref{CLI} for \( u \) between the balls \( B_{\frac{3R}{2}} \) and \( B_{2R} \), with an upper bound of the type we are looking for. Concerning the term~\eqref{005} we have
 	\begin{align}
-		\label{005} \abs{\int\limits_{B_{R}}^{} \eta ^{2} v \Delta _{h} f \dd{x}} \overset{\text{discrete by I.P.}}{=} & \abs{\int\limits_{B_{R}}^{} - \Delta _{-h} (\eta ^{2} v) f  \dd{x}}  \\
+		\label{005} \abs{\int\limits_{B_{R}}^{} \eta ^{2} v \Delta _{h} f \dd{x}} \overset{\text{discrete by I.P.}}{=} & \abs{\int\limits_{B_{R}}^{} - \Delta _{-h} (\eta ^{2} v) f  \dd{x}}                                                                                                            \\
 		\overset{\text{Young }p=q=2}{\leq}                                                                             & \widetilde{\varepsilon} \int\limits_{B_{R}}^{} \abs{\Delta _{-h}(\eta ^{2}v)}^{2} \dd{x} + \frac{1}{ \widetilde{\varepsilon}} \int\limits_{B_{R}}^{} \abs{f}^{2} \dd{x} \notag
 	\end{align}
 	The term \( \int_{B_{R}}^{} \abs{f}^{2} \dd{x} \leq \int_{B_{2R}}^{} \abs{f}^{2} \dd{x} \) is already fine for the estimate we want. For the other term we have
 	\begin{align}
-		\widetilde{\varepsilon }\int\limits_{B_{R}}^{} \abs{\Delta _{h}(\eta ^{2}v)}^{2} \dd{x} \overset{\text{Corollary of }~\ref{lemma01}}{\leq} & \widetilde{\varepsilon } \int\limits_{B_{h+r}}^{} \abs{\nabla (\eta ^{2}v) }^{2} \dd{x}  \\
-		=                                                                                                                                          & c \widetilde{\varepsilon }\int\limits_{B_{R+h}}^{} \abs{(\nabla \eta ^{2})v+\eta ^{2} \nabla v }^{2} \dd{x}  \\
-		\overset{\eqref{007}}{\leq}                                                                                                                & c \widetilde{\varepsilon} \left[ \frac{128}{R^{2}} \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2 \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]  \\
-		\leq                                                                                                                                       & c \widetilde{\varepsilon } 2 \left[ \int\limits_{B_{R+h}}^{} \abs{\nabla \eta ^{2}}^{2} \abs{v}^{2} \dd{x} + \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]  \\
-		\overset{\eqref{008}}{\leq}                                                                                                                & c \widetilde{\varepsilon} \left[ \frac{128}{R^{2}} \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2 \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]  \\
-		\overset{\eta ^{4}\leq \eta ^{2}}{\leq}                                                                                                    & \frac{128}{R^{2}}\, c \widetilde{\varepsilon } \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2\,c \widetilde{\varepsilon }  \int\limits_{B_{R+h}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x}
+		\widetilde{\varepsilon }\int\limits_{B_{R}}^{} \abs{\Delta _{h}(\eta ^{2}v)}^{2} \dd{x} \overset{\text{Corollary of }~\ref{lemma01}}{\leq}
+		                            & \widetilde{\varepsilon } \int\limits_{B_{h+r}}^{} \abs{\nabla (\eta ^{2}v) }^{2} \dd{x}                                                                                                 \\
+		=                           & c \widetilde{\varepsilon }\int\limits_{B_{R+h}}^{} \abs{(\nabla \eta ^{2})v+\eta ^{2} \nabla v }^{2} \dd{x}                                                                             \\
+		\overset{\eqref{007}}{\leq} & c \widetilde{\varepsilon} \left[ \frac{128}{R^{2}} \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2 \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]                 \\
+		\leq                        & c \widetilde{\varepsilon } 2 \left[ \int\limits_{B_{R+h}}^{} \abs{\nabla \eta ^{2}}^{2} \abs{v}^{2} \dd{x} + \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]       \\
+		\overset{\eqref{008}}{\leq} & c \widetilde{\varepsilon} \left[ \frac{128}{R^{2}} \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2 \int\limits_{B_{R+h}}^{} \eta ^{4} \abs{\nabla v}^{2} \dd{x} \right]                 \\
+		\overset{\eta ^{4}\leq \eta ^{2}}{\leq}
+		                            & \frac{128}{R^{2}}\, c \widetilde{\varepsilon } \int\limits_{B_{R+h}}^{} \abs{v}^{2} \dd{x} + 2\,c \widetilde{\varepsilon }  \int\limits_{B_{R+h}}^{} \eta ^{2}\abs{\nabla v}^{2} \dd{x}
 	\end{align}
 	For~\eqref{007}, see that
 	\begin{gather}
